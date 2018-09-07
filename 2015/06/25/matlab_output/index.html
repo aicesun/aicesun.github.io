@@ -1,0 +1,65 @@
+<html>
+<head>
+	
+	<title>matlab数值字符合并输出</title>
+	<meta name="keywords" content="python,matlab,GMT,shell" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 class="title">matlab数值字符合并输出</h2>
+<pre><code>data=[1 2 3 4;5 9 8 7;8 9 7 8;1 5 6 7];
+fileID = fopen(&apos;data.txt&apos;,&apos;w&apos;);    
+[h s]=size(data);
+for m=1:h
+        fprintf(fileID,&apos;Node:\t&apos;);
+        fprintf(fileID,&apos;%f\t&apos;,data(m,:));
+        fprintf(fileID,&apos;\n&apos;)
+end
+fclose(fileID)
+</code></pre><p><strong>结果为：</strong><br>    Node:    1.000000    2.000000    3.000000    4.000000<br>    Node:    5.000000    9.000000    8.000000    7.000000<br>    Node:    8.000000    9.000000    7.000000    8.000000<br>    Node:    1.000000    5.000000    6.000000    7.000000</p>
+
+
+<!--<a href="http://yoursite.com/2015/06/25/matlab_output/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'undefined'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

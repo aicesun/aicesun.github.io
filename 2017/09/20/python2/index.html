@@ -1,0 +1,124 @@
+<html>
+<head>
+	
+	<title>绘全球地震分布</title>
+	<meta name="keywords" content="python,matlab,GMT,shell" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 class="title">绘全球地震分布</h2>
+<pre><code># -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+Created on Thu Nov 19 21:11:41 2015
+
+@author: aicesun
+&quot;&quot;&quot;
+
+from obspy import readEvents
+from obspy.fdsn import Client
+import datetime
+
+# Open the earthquake data file.
+catalog = readEvents(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.quakeml&quot;)
+
+# Create empty lists for the data we are interested in.
+lats, lons = [], []
+magnitudes = []
+timestrings = []
+
+# Read through the entire file, skip the first line,
+#  and pull out just the lats and lons.
+for item in range(len(catalog)):
+    magnitudes.append(catalog[item].magnitudes[0].mag)
+    lats.append(catalog[item].origins[0].latitude)
+    lons.append(catalog[item].origins[0].longitude)
+    timestrings.append(catalog[item].origins[0].time)
+
+
+
+# --- Build Map ---
+from mpl_toolkits.basemap import Basemap
+import matplotlib.pyplot as plt
+import numpy as np
+
+def get_marker_color(magnitude):
+    # Returns green for small earthquakes, yellow for moderate
+    #  earthquakes, and red for significant earthquakes.
+    if magnitude &lt; 3.0:
+        return (&apos;go&apos;)
+    elif magnitude &lt; 5.0:
+        return (&apos;yo&apos;)
+    else:
+        return (&apos;ro&apos;)
+
+# Make this plot larger.
+plt.figure(figsize=(16,12))
+
+eq_map = Basemap(projection=&apos;robin&apos;, resolution = &apos;l&apos;, area_thresh = 1000.0,lat_0=0, lon_0=-130)
+
+eq_map.drawcoastlines()
+eq_map.drawcountries()
+eq_map.fillcontinents(color = &apos;gray&apos;)
+eq_map.drawmapboundary()
+eq_map.drawmeridians(np.arange(0, 360, 30))
+eq_map.drawparallels(np.arange(-90, 90, 30))
+
+min_marker_size = 2.5
+for lon, lat, mag in zip(lons, lats, magnitudes):
+    x,y = eq_map(lon, lat)
+    msize = mag * min_marker_size
+    marker_string = get_marker_color(mag)
+    eq_map.plot(x, y, marker_string, markersize=msize)
+starttime =  timestrings[-1].date
+endtime =  timestrings[0].date
+title_string = &quot;Earthquakes of Magnitude 2.5 or Greater\n&quot;
+title_string += &quot;%s through %s&quot; % (starttime, endtime)
+plt.title(title_string)
+
+plt.show()
+</code></pre>
+
+<!--<a href="http://yoursite.com/2017/09/20/python2/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'undefined'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<html>
+<head>
+	
+	<title>计算PGA的python程序</title>
+	<meta name="keywords" content="python,matlab,GMT,shell" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 class="title">计算PGA的python程序</h2>
+<pre><code>import numpy as np
+import math
+import os,glob
+import string
+import matplotlib.pyplot as plt
+from pylab import *
+import datetime
+starttime = datetime.datetime.now()
+def computepga(Accelerate,LN,damp,Freq,nFreq):
+              n =LN
+              dt = 0.02
+              zeta = damp
+              nfreq = nFreq
+              freq = Freq
+              MAcc = [0]*nfreq 
+              absacc = [0]*n
+              for s in range(n):
+                            absacc[s] = abs( string.atof(Accelerate[s]) ) 
+              for k in range(nfreq):
+                            Damfreq = freq[k] * sqrt( 1-zeta**2 )
+                            e_t  = math.exp( - zeta * dt * freq[k] )
+                            ss = math.sin( Damfreq * dt )
+                            cc = math.cos( Damfreq * dt )
+                            d_f = ( 2 * zeta**2 - 1 ) / ( (freq[k])**2 * dt )
+                            d_3t = zeta / ( freq[k]**3 * dt )
+                            A00= e_t*( ss * zeta/sqrt(1-zeta*zeta)+cc )
+                            A01= e_t*( ss/Damfreq )
+                            A10 =  -freq[k] * e_t * ss/sqrt(1-zeta*zeta)
+                            A11 =   e_t * ( -ss * zeta / sqrt(1-zeta*zeta) + cc )
+                            B00 =   e_t * (( d_f+zeta / freq[k] ) * ss/Damfreq+( 2*d_3t+1 / freq[k]**2) * cc )-2*d_3t
+                            B01 =  -e_t * ( d_f * ss/Damfreq + 2*d_3t*cc ) - 1/freq[k]**2 + 2*d_3t
+                            B10  =  e_t * ( (d_f +zeta/freq[k] ) * (cc - zeta/sqrt(1-zeta**2) *ss ) - ( 2*d_3t+1/freq[k]**2 ) * ( Damfreq*ss+zeta*freq[k]*cc) )+1/( freq[k]**2*dt )
+                            B11 =   e_t * ( 1/(freq[k]**2*dt )*cc+ss*zeta/( freq[k]*Damfreq*dt ))-1/( freq[k]**2*dt )           
+                            Displace = [0]*(n+1)
+                            Velocity = [0]*(n+1)
+                            AbsAcce = [0]*(n+1)
+                            absabsAcc = [0]*(n+1)
+                            for j in range(n-1):
+                                          Displace[j+1] = A00*Displace[j]+A01*Velocity[j]+B11*float(Accelerate[j])+B01*float(Accelerate[j+1]) 
+                                          Velocity[j+1] = A10*Displace[j]+A11*Velocity[j]+B10*float(Accelerate[j])+B11*float(Accelerate[j+1]) 
+                                          AbsAcce[j+1]  = -2*zeta*freq[k]*Velocity[j+1] -freq[k]**2*Displace[j+1]
+                                          absabsAcc[j+1] = abs(AbsAcce[j+1])
+                            if freq[k]&gt;=10**10:
+                                          MAcc[k] = max(absacc)
+                            else:
+                                          MAcc[k] = max(absabsAcc)
+              return MAcc
+accfile = glob.glob(&apos;xj30bar/ACC/*S001*.acc&apos;)
+numsite = len(accfile)
+print &quot;the number of site is: &quot;,numsite
+damp = 0.05
+Freq1 = 0.1
+Freq2 = 50
+nFreq = 100
+Frinc = math.log(Freq2/Freq1)/(nFreq-1)
+Freq = [0]*nFreq
+T = [0]*nFreq
+Freq[0] = Freq1
+for k in range(nFreq):
+             Freq[k] = Freq1*math.exp(k*Frinc)
+             T[k] = 1/Freq[k]
+PGA = [[0]*nFreq]*numsite
+for idx in range(numsite):
+            filename = accfile[idx]
+            file =  open(filename,&apos;r&apos;)
+            linesList = file.readlines()
+            linesList = [line.strip().split() for line in linesList]
+            file.close()
+            tm = [x[0] for x in linesList[17:65552]]
+            acc = [x[1] for x in linesList[17:65552]]
+            LN =len(acc)
+            print &quot;computing&quot;, filename
+            PGA = computepga(acc,LN,damp,Freq,nFreq)
+            plt.figure(1)       
+            plt.loglog(T,PGA,label = &apos;%d&apos; %(idx+1))
+            plt.grid()
+            plt.title(&quot;PGA&quot;)
+            plt.xlabel(&quot;T&quot;)
+            plt.ylabel(&quot;PGA&quot;)
+            plt.legend()
+print &apos;plot figure now&apos;     
+endtime = datetime.datetime.now()
+print (endtime - starttime).seconds,&apos;seconds&apos;
+plt.show()
+print(&apos;happy end&apos;)
+</code></pre>
+
+<!--<a href="http://yoursite.com/2015/11/08/python1/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'undefined'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

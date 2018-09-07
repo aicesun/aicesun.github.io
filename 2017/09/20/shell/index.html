@@ -1,0 +1,93 @@
+<html>
+<head>
+	
+	<title>exsim的shell脚本</title>
+	<meta name="keywords" content="python,matlab,GMT,shell" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 class="title">exsim的shell脚本</h2>
+<pre><code>#!/bin/bash
+rm -r ./ACC
+rm -r ./PSA
+rm -r ./other
+rm ACC.out
+lat=30.025
+lon=100.13
+stk=140.0
+dip=90.0
+depth=2
+L=95.0
+W=25.0
+dl=5.0
+dw=5.0
+hypoL=47.5 # position center 2.5,8
+hypoW=12.5
+num=0
+outfile=input
+inputfile=input.params
+for stress in $(seq 30 5 100)
+do
+    for kappa in 0.002 0.003 0.004 0.005 0.006 0.007 0.008 
+    do 
+        num=`expr $num + 1`
+        mkdir $num
+        sed -i &apos;7c \ 8.0 &apos;$stress&apos; 1 &apos;$kappa&apos; &apos; $inputfile
+        sed -i &apos;9c \ &apos;$lat&apos;  &apos;$lon&apos; &apos; $inputfile
+        sed -i &apos;11c \ &apos;$stk&apos;  &apos;$dip&apos; &apos;$depth&apos; &apos; $inputfile
+        sed -i &apos;29c \ &apos;$L&apos;  &apos;$W&apos; &apos;$dl&apos; &apos;$dw&apos; 70.0&apos; $inputfile
+        sed -i &apos;36c \ &apos;$hypoL&apos; &apos;$hypoW&apos; 1&apos; $inputfile
+        sed -i &apos;97c \  1&apos; $inputfile  # 1 random 0 specify
+        sed -i &apos;93c \ &apos;$RANDOM&apos; 5&apos; $inputfile
+       ./exsim14 $inputfile
+        cp $inputfile $num
+        mv ACC PSA other ACC.out psa.out $num
+        mv $num /media/aicesun/Document/litang/fault1/mw75/random/center/
+    done
+done
+</code></pre>
+
+<!--<a href="http://yoursite.com/2017/09/20/shell/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'undefined'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

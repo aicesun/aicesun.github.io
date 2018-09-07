@@ -1,0 +1,67 @@
+<html>
+<head>
+	
+	<title>双系统安装centos</title>
+	<meta name="keywords" content="python,matlab,GMT,shell" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 class="title">双系统安装centos</h2>
+<ol>
+<li>centos7开始不分32位和64位，在官网下载x86_64的iso，利用Fedora LiveUSB Creator制作一个U盘启动盘，把<strong>ISO</strong>镜像也要拷贝进去！</li>
+<li>在win下将准备安装linux的逻辑磁盘卸载，右键‘计算机’—‘管理’—‘磁盘管理’，然后右键磁盘选择卸载。</li>
+<li>重启电脑，将<strong>BIOS</strong>里<strong>boot</strong>的<strong>first boot</strong>选为<strong>usb hdd</strong>（具体参照<a href="http://www.baidu.com" target="_blank" rel="external">百度</a>)</li>
+<li>以上都成功，那么就可以进入安装界面了，安装源选择U盘上的ISO，安装界面选<strong>gnome</strong>，磁盘选<strong>卸载</strong>的那个区，可以分配<strong>4G swap</strong>，<strong>200M boot</strong>、其余都是<strong> \</strong> ，格式为<strong>ext4（lvm）</strong>，仍可参照<a href="http://www.baidu.com" target="_blank" rel="external">百度</a>。</li>
+<li>一路安装出来重启就可以进入centos，这时候你会发现win7不见了，不着急。</li>
+<li>打开终端，添加管理员权限:<br><code>sudoedit /etc/sudoers</code><br>找到<code>root ALL=(ALL)  ALL</code>，<br>在下面添加<code>xxx（你的用户名） ALL=(ALL)  ALL</code>  </li>
+<li>添加<strong>EPEL</strong>源<br><code>wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm</code>（版本随时增加，可以点进去看版本号）<br><code>sudo rpm -ivh epel-release-7-2.noarch.rpm</code><br><code>sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7</code><br><code>sudo yum install yum-axelget</code>（添加一个yum插件）<br><code>sudo yum update</code>（升级下）      </li>
+<li>挂载NFS文件系统，挂载NTFS格式的硬盘<br><code>sudo yum install nfs-utils ntfs-3g</code><br>安装完成后，就能点开ntfs分区了，把所有分区都点开！<br>然后<br><code>sudo grub2-mkconfig -o /boot/grub2/grub.cfg</code><br>出现windows的字样后，就表示找到了win下的引导文件，重启就有了windows引导。  </li>
+<li>切换到<strong>su</strong>下，把下列工具都装上<br><code>yum install p7zip</code>           # 7z格式压缩和解压<br><code>yum install git</code>             # 源码版本控制<br><code>yum install xclip</code>           # 终端的文本复制工具<br><code>yum install ImageMagick</code>     # 其中的import和convert命令很有用<br><code>yum install gcc</code>                         # C编译器<br><code>yum install gcc-c++</code>                 　  # C++编译器<br><code>yum install gcc-gfortran</code>                # Fortran编译器<br><code>yum install compat-gcc-44</code>               # 兼容gcc 4.4<br><code>yum install compat-gcc-44-c++</code>           # 兼容gcc-c++ 4.4<br><code>yum install compat-gcc-44-gfortran</code>      # 兼容gcc-fortran 4.4<br><code>yum install compat-libf2c-34</code>            # g77 3.4.x兼容库<br><code>yum install gdb</code>                         # 代码调试器<br><code>yum install java</code>                        # java运行环境<br><code>yum install clang</code>               # clang编译器<br><code>yum install clang-analyze</code>      # clang静态分析器<br><code>yum install cmake</code>  </li>
+<li>安装<strong>sac</strong>和<strong>gmt</strong><br><code>sudo yum install gcc-c++ libXt-devel libXaw-devel libXmu-devel libSM-devel</code><br><code>sudo yum install netcdf-devel</code><br><code>wget ftp://ftp.soest.hawaii.edu/gmt/gmt-4.5.12-src.tar.bz2</code><br><code>wget ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.2.tar.gz</code><br><code>tar -jxvf gmt-4.5.12-src.tar.bz2</code><br><code>cd GMT-4.5.12</code><br><code>./configure --prefix=/usr/local/GMT-4.5.12</code><br><code>make</code><br><code>sudo make install-all</code><br><code>tar -zxvf gshhg-gmt-2.3.2.tar.gz</code><br><code>sudo cp -r gshhg-gmt-2.3.2 /usr/local/GMT-4.5.12/share/coast</code><br>然后在<strong>./bashrc</strong>中增加环境变量<br><code>vim ~/.bashrc</code><br><code>export GMTHOME=/usr/local/GMT-4.5.12</code><br><code>export PATH=${GMTHOME}/bin:$PATH</code><br>安装<strong>sac</strong><br><code>sudo yum groupinstall &#39;Development Tools&#39;</code><br><code>sudo yum install glibc ncurses-devel libSM-devel libICE-devel \libXpm-devel   libX11-devel zlib-devel</code><br><code>tar -zxvf sac-101.6a-linux_x86_64.tar.gz</code><br><code>sudo cp -r sac /usr/local</code><br><code>vim ~/.bashrc</code><br>在<strong>./bashrc</strong>中添加：<br><code>export SACHOME=/usr/local/sac</code><br><code>export SACAUX=$SACHOME/aux</code><br><code>export PATH=$SACHOME/bin:$PATH</code><br><code>export SAC_DISPLAY_COPYRIGHT=1</code><br><code>export SAC_PPK_LARGE_CROSSHAIRS=1</code><br><code>export SAC_USE_DATABASE=0</code><br>保存退出<br><code>source ~/.bashrc</code>  <h4 id="END"><a href="#END" class="headerlink" title="END"></a><strong>END</strong></h4>@本文部分内容引自<a href="http://seisman.info/" target="_blank" rel="external">Seisman</a></li>
+</ol>
+
+
+<!--<a href="http://yoursite.com/2015/06/26/╦л╧╡═│░▓╫░centos/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'undefined'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
