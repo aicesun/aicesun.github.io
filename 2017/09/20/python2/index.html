@@ -24,76 +24,8 @@
 <body>
 
 <h2 class="title">绘全球地震分布</h2>
-<pre><code># -*- coding: utf-8 -*-
-&quot;&quot;&quot;
-Created on Thu Nov 19 21:11:41 2015
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line">&quot;&quot;&quot;</div><div class="line">Created on Thu Nov 19 21:11:41 2015</div><div class="line"></div><div class="line">@author: aicesun</div><div class="line">&quot;&quot;&quot;</div><div class="line"></div><div class="line">from obspy import readEvents</div><div class="line">from obspy.fdsn import Client</div><div class="line">import datetime</div><div class="line"></div><div class="line"># Open the earthquake data file.</div><div class="line">catalog = readEvents(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.quakeml&quot;)</div><div class="line"></div><div class="line"># Create empty lists for the data we are interested in.</div><div class="line">lats, lons = [], []</div><div class="line">magnitudes = []</div><div class="line">timestrings = []</div><div class="line"></div><div class="line"># Read through the entire file, skip the first line,</div><div class="line">#  and pull out just the lats and lons.</div><div class="line">for item in range(len(catalog)):</div><div class="line">    magnitudes.append(catalog[item].magnitudes[0].mag)</div><div class="line">    lats.append(catalog[item].origins[0].latitude)</div><div class="line">    lons.append(catalog[item].origins[0].longitude)</div><div class="line">    timestrings.append(catalog[item].origins[0].time)</div><div class="line">    </div><div class="line"></div><div class="line">        </div><div class="line"># --- Build Map ---</div><div class="line">from mpl_toolkits.basemap import Basemap</div><div class="line">import matplotlib.pyplot as plt</div><div class="line">import numpy as np</div><div class="line"></div><div class="line">def get_marker_color(magnitude):</div><div class="line">    # Returns green for small earthquakes, yellow for moderate</div><div class="line">    #  earthquakes, and red for significant earthquakes.</div><div class="line">    if magnitude &lt; 3.0:</div><div class="line">        return (&apos;go&apos;)</div><div class="line">    elif magnitude &lt; 5.0:</div><div class="line">        return (&apos;yo&apos;)</div><div class="line">    else:</div><div class="line">        return (&apos;ro&apos;)</div><div class="line"></div><div class="line"># Make this plot larger.</div><div class="line">plt.figure(figsize=(16,12))</div><div class="line"></div><div class="line">eq_map = Basemap(projection=&apos;robin&apos;, resolution = &apos;l&apos;, area_thresh = 1000.0,lat_0=0, lon_0=-130)</div><div class="line">              </div><div class="line">eq_map.drawcoastlines()</div><div class="line">eq_map.drawcountries()</div><div class="line">eq_map.fillcontinents(color = &apos;gray&apos;)</div><div class="line">eq_map.drawmapboundary()</div><div class="line">eq_map.drawmeridians(np.arange(0, 360, 30))</div><div class="line">eq_map.drawparallels(np.arange(-90, 90, 30))</div><div class="line"> </div><div class="line">min_marker_size = 2.5</div><div class="line">for lon, lat, mag in zip(lons, lats, magnitudes):</div><div class="line">    x,y = eq_map(lon, lat)</div><div class="line">    msize = mag * min_marker_size</div><div class="line">    marker_string = get_marker_color(mag)</div><div class="line">    eq_map.plot(x, y, marker_string, markersize=msize)</div><div class="line">starttime =  timestrings[-1].date</div><div class="line">endtime =  timestrings[0].date</div><div class="line">title_string = &quot;Earthquakes of Magnitude 2.5 or Greater\n&quot;</div><div class="line">title_string += &quot;%s through %s&quot; % (starttime, endtime)</div><div class="line">plt.title(title_string)</div><div class="line"></div><div class="line">plt.show()</div></pre></td></tr></table></figure>
 
-@author: aicesun
-&quot;&quot;&quot;
-
-from obspy import readEvents
-from obspy.fdsn import Client
-import datetime
-
-# Open the earthquake data file.
-catalog = readEvents(&quot;http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_month.quakeml&quot;)
-
-# Create empty lists for the data we are interested in.
-lats, lons = [], []
-magnitudes = []
-timestrings = []
-
-# Read through the entire file, skip the first line,
-#  and pull out just the lats and lons.
-for item in range(len(catalog)):
-    magnitudes.append(catalog[item].magnitudes[0].mag)
-    lats.append(catalog[item].origins[0].latitude)
-    lons.append(catalog[item].origins[0].longitude)
-    timestrings.append(catalog[item].origins[0].time)
-
-
-
-# --- Build Map ---
-from mpl_toolkits.basemap import Basemap
-import matplotlib.pyplot as plt
-import numpy as np
-
-def get_marker_color(magnitude):
-    # Returns green for small earthquakes, yellow for moderate
-    #  earthquakes, and red for significant earthquakes.
-    if magnitude &lt; 3.0:
-        return (&apos;go&apos;)
-    elif magnitude &lt; 5.0:
-        return (&apos;yo&apos;)
-    else:
-        return (&apos;ro&apos;)
-
-# Make this plot larger.
-plt.figure(figsize=(16,12))
-
-eq_map = Basemap(projection=&apos;robin&apos;, resolution = &apos;l&apos;, area_thresh = 1000.0,lat_0=0, lon_0=-130)
-
-eq_map.drawcoastlines()
-eq_map.drawcountries()
-eq_map.fillcontinents(color = &apos;gray&apos;)
-eq_map.drawmapboundary()
-eq_map.drawmeridians(np.arange(0, 360, 30))
-eq_map.drawparallels(np.arange(-90, 90, 30))
-
-min_marker_size = 2.5
-for lon, lat, mag in zip(lons, lats, magnitudes):
-    x,y = eq_map(lon, lat)
-    msize = mag * min_marker_size
-    marker_string = get_marker_color(mag)
-    eq_map.plot(x, y, marker_string, markersize=msize)
-starttime =  timestrings[-1].date
-endtime =  timestrings[0].date
-title_string = &quot;Earthquakes of Magnitude 2.5 or Greater\n&quot;
-title_string += &quot;%s through %s&quot; % (starttime, endtime)
-plt.title(title_string)
-
-plt.show()
-</code></pre>
 
 <!--<a href="http://yoursite.com/2017/09/20/python2/#disqus_thread" class="article-comment-link">Comments</a>-->
 <div id="disqus_thread"></div>

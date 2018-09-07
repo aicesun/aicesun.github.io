@@ -24,33 +24,8 @@
 <body>
 
 <h2 class="title">GMT画等值线</h2>
-<pre><code>gmtset TICK_LENGTH 0.1
-gmtset LABEL_FONT 5
-gmtset LABEL_FONT_SIZE 10
-gmtset ANOT_FONT_SIZE 8
-surface rand.txt -Gtmp.grd -I0.1 -R-4/4/-4/4 -I0.1 -C0.001
-# rand.txt: [lat,lon,data]
-#  -将资料网格化并存为grd文件
-# -T: 设定tension factor
-# -I: 设定网格大小
-# -C: 设定收敛限制值
-grd2cpt tmp.grd -Cjet -Z -V &gt; tmp.cpt
-# -产生等值图所需的颜色渐变文件(*.cpt)
-# -C: 选择参考色
-# -T: 定义新cpt文件的范围,例如-Tz0/z1/dz为,起始值(z0),终止值(z1),间距(dz)
-# -Z: 让颜色具有连续性(smooth)
-grdimage tmp.grd -Jx2 -Ctmp.cpt -B1WSne -K &gt;dzx.ps
-# -使用grd的资料绘出以颜色表示的等值图,色表使用tmp.cpt
-grdcontour tmp.grd -Jx -C1 -A5f6 -G1 -O -Wa3/255 -Wc1/255 &gt;&gt; dzx.ps
-# -使用sst.grd的资料会出等值线
-# -A5f6 每隔5画出等值线并标出其值,f指定字型
-# -C1 每隔1画出等值线但不标出其值
-# -G1 設定沿著等值线标出值的间隔
-# -Wa3/255 设定-A所标出的等值线宽度及颜色
-# -Wc1/255 设定-C所标出的等值线宽度及颜色
-rm .gmt* tmp.*
-ps2raster dzx.ps -A -P 
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">gmtset TICK_LENGTH 0.1</div><div class="line">gmtset LABEL_FONT 5</div><div class="line">gmtset LABEL_FONT_SIZE 10</div><div class="line">gmtset ANOT_FONT_SIZE 8</div><div class="line">surface rand.txt -Gtmp.grd -I0.1 -R-4/4/-4/4 -I0.1 -C0.001</div><div class="line"># rand.txt: [lat,lon,data]</div><div class="line">#  -将资料网格化并存为grd文件</div><div class="line"># -T: 设定tension factor</div><div class="line"># -I: 设定网格大小</div><div class="line"># -C: 设定收敛限制值</div><div class="line">grd2cpt tmp.grd -Cjet -Z -V &gt; tmp.cpt</div><div class="line"># -产生等值图所需的颜色渐变文件(*.cpt)</div><div class="line"># -C: 选择参考色</div><div class="line"># -T: 定义新cpt文件的范围,例如-Tz0/z1/dz为,起始值(z0),终止值(z1),间距(dz)</div><div class="line"># -Z: 让颜色具有连续性(smooth)</div><div class="line">grdimage tmp.grd -Jx2 -Ctmp.cpt -B1WSne -K &gt;dzx.ps</div><div class="line"># -使用grd的资料绘出以颜色表示的等值图,色表使用tmp.cpt</div><div class="line">grdcontour tmp.grd -Jx -C1 -A5f6 -G1 -O -Wa3/255 -Wc1/255 &gt;&gt; dzx.ps</div><div class="line"># -使用sst.grd的资料会出等值线</div><div class="line"># -A5f6 每隔5画出等值线并标出其值,f指定字型</div><div class="line"># -C1 每隔1画出等值线但不标出其值</div><div class="line"># -G1 設定沿著等值线标出值的间隔</div><div class="line"># -Wa3/255 设定-A所标出的等值线宽度及颜色</div><div class="line"># -Wc1/255 设定-C所标出的等值线宽度及颜色</div><div class="line">rm .gmt* tmp.*</div><div class="line">ps2raster dzx.ps -A -P</div></pre></td></tr></table></figure>
+
 
 <!--<a href="http://yoursite.com/2015/11/11/dengzhixian/#disqus_thread" class="article-comment-link">Comments</a>-->
 <div id="disqus_thread"></div>

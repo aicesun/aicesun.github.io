@@ -24,45 +24,8 @@
 <body>
 
 <h2 class="title">exsim的shell脚本</h2>
-<pre><code>#!/bin/bash
-rm -r ./ACC
-rm -r ./PSA
-rm -r ./other
-rm ACC.out
-lat=30.025
-lon=100.13
-stk=140.0
-dip=90.0
-depth=2
-L=95.0
-W=25.0
-dl=5.0
-dw=5.0
-hypoL=47.5 # position center 2.5,8
-hypoW=12.5
-num=0
-outfile=input
-inputfile=input.params
-for stress in $(seq 30 5 100)
-do
-    for kappa in 0.002 0.003 0.004 0.005 0.006 0.007 0.008 
-    do 
-        num=`expr $num + 1`
-        mkdir $num
-        sed -i &apos;7c \ 8.0 &apos;$stress&apos; 1 &apos;$kappa&apos; &apos; $inputfile
-        sed -i &apos;9c \ &apos;$lat&apos;  &apos;$lon&apos; &apos; $inputfile
-        sed -i &apos;11c \ &apos;$stk&apos;  &apos;$dip&apos; &apos;$depth&apos; &apos; $inputfile
-        sed -i &apos;29c \ &apos;$L&apos;  &apos;$W&apos; &apos;$dl&apos; &apos;$dw&apos; 70.0&apos; $inputfile
-        sed -i &apos;36c \ &apos;$hypoL&apos; &apos;$hypoW&apos; 1&apos; $inputfile
-        sed -i &apos;97c \  1&apos; $inputfile  # 1 random 0 specify
-        sed -i &apos;93c \ &apos;$RANDOM&apos; 5&apos; $inputfile
-       ./exsim14 $inputfile
-        cp $inputfile $num
-        mv ACC PSA other ACC.out psa.out $num
-        mv $num /media/aicesun/Document/litang/fault1/mw75/random/center/
-    done
-done
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">rm -r ./ACC</div><div class="line">rm -r ./PSA</div><div class="line">rm -r ./other</div><div class="line">rm ACC.out</div><div class="line">lat=30.025</div><div class="line">lon=100.13</div><div class="line">stk=140.0</div><div class="line">dip=90.0</div><div class="line">depth=2</div><div class="line">L=95.0</div><div class="line">W=25.0</div><div class="line">dl=5.0</div><div class="line">dw=5.0</div><div class="line">hypoL=47.5 # position center 2.5,8</div><div class="line">hypoW=12.5</div><div class="line">num=0</div><div class="line">outfile=input</div><div class="line">inputfile=input.params</div><div class="line">for stress in $(seq 30 5 100)</div><div class="line">do</div><div class="line">    for kappa in 0.002 0.003 0.004 0.005 0.006 0.007 0.008 </div><div class="line">    do </div><div class="line">        num=`expr $num + 1`</div><div class="line">        mkdir $num</div><div class="line">        sed -i &apos;7c \ 8.0 &apos;$stress&apos; 1 &apos;$kappa&apos; &apos; $inputfile</div><div class="line">        sed -i &apos;9c \ &apos;$lat&apos;  &apos;$lon&apos; &apos; $inputfile</div><div class="line">        sed -i &apos;11c \ &apos;$stk&apos;  &apos;$dip&apos; &apos;$depth&apos; &apos; $inputfile</div><div class="line">        sed -i &apos;29c \ &apos;$L&apos;  &apos;$W&apos; &apos;$dl&apos; &apos;$dw&apos; 70.0&apos; $inputfile</div><div class="line">        sed -i &apos;36c \ &apos;$hypoL&apos; &apos;$hypoW&apos; 1&apos; $inputfile</div><div class="line">        sed -i &apos;97c \  1&apos; $inputfile  # 1 random 0 specify</div><div class="line">        sed -i &apos;93c \ &apos;$RANDOM&apos; 5&apos; $inputfile</div><div class="line">       ./exsim14 $inputfile</div><div class="line">        cp $inputfile $num</div><div class="line">        mv ACC PSA other ACC.out psa.out $num</div><div class="line">        mv $num /media/aicesun/Document/litang/fault1/mw75/random/center/</div><div class="line">    done</div><div class="line">done</div></pre></td></tr></table></figure>
+
 
 <!--<a href="http://yoursite.com/2017/09/20/shell/#disqus_thread" class="article-comment-link">Comments</a>-->
 <div id="disqus_thread"></div>
