@@ -1,7 +1,7 @@
 <html>
 <head>
 	
-	<title>about</title>
+	<title>利用rdseed和sac对seed文件进行数据处理</title>
 	<meta name="keywords" content="python,matlab,GMT,shell" />
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -23,15 +23,63 @@
 
 <body>
 
-<h2 class="title">about</h2>
-<h1><br><div class="text-center"><br>             火冷灯稀霜露下,昏昏雪意云垂野<br></div><br></h1>    
+<h2 class="title">利用rdseed和sac对seed文件进行数据处理</h2>
+<p>利用rdseed解压seed文件，删除一定震中距以外的sac文件，进行滤波，去仪器响应后重命名保存    </p>
+<pre><code>#!/bin/zsh
+SAC_DISPLAY_COPYRIGHT=0
 
-<p><script src="processing-1.3.6.min.js"></script></p>
-<canvas data-processing-sources="hello-web.pde"></canvas>
+#数据路径,按照需要自己修改
+sacfolder=~
 
-<h2 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h2><h3 id="PHD-student-in-IGP"><a href="#PHD-student-in-IGP" class="headerlink" title="PHD student in IGP"></a>PHD student in IGP</h3><h3 id="Email-sunjize-cea-igp-ac-cn"><a href="#Email-sunjize-cea-igp-ac-cn" class="headerlink" title="Email: sunjize@cea-igp.ac.cn"></a>Email: sunjize@cea-igp.ac.cn</h3>
+#outype为输出数据类型: none-&gt;位移,vel-&gt;速度,acc-&gt;加速度
+outype=none  
 
-<!--<a href="http://yoursite.com/about/index.html#disqus_thread" class="article-comment-link">Comments</a>-->
+
+#滤波参数
+f1=0.004 
+f2=0.007 
+f3=0.2 
+f4=0.4
+
+cd $sacfolder
+for file in *.SEED;
+do
+echo $file
+suffix=${file%%.*}
+mkdir $suffix  
+cp $file $suffix 
+cd $suffix
+mkdir SAC
+rdseed -Rdf $file #提取波形数据和 RESP 仪器响应文件
+rm -rf $file  
+saclst dist f *.SAC &gt; dist.txt                #震中距文件
+rm -rf `saclst dist f *.SAC | gawk &apos;$2&gt;100&apos;`  #震中距&gt;100文件删除 
+
+for sacfile in *.SAC;  #去仪器响应
+do 
+awk $sacfile -F. &apos;{printf &quot;mv %s %s.%s.%s.%s\n&quot;, $0, $7, $8, $9, $10}&apos; | sh
+sac &lt;&lt;EOF
+read $sacfile
+rmean
+rtrend
+lp co 1.0 p 2 n 4
+trans from evalresp to $outype freq $f1 $f2 $f3 $f4
+write ${sacfile}.filtered   
+quit
+EOF
+done
+
+mv *.SAC.filtered SAC
+mv *.txt SAC
+cd SAC
+ls *.SAC.filtered | awk -F. &apos;{printf &quot;mv %s %s.%s.%s.%s.%s.%s.%s.%s\n&quot;,$0,$7,$8,$1,$2,$3,$4,$10,$12}&apos; | sh #文件重命名
+cd ..
+rm *.*
+cd $sacfolder
+done
+</code></pre>
+
+<!--<a href="http://yoursite.com/2018/11/28/sacskill/#disqus_thread" class="article-comment-link">Comments</a>-->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
