@@ -24,60 +24,8 @@
 <body>
 
 <h2 class="title">利用rdseed和sac对seed文件进行数据处理</h2>
-<p>利用rdseed解压seed文件，删除一定震中距以外的sac文件，进行滤波，去仪器响应后重命名保存    </p>
-<pre><code>#!/bin/zsh
-SAC_DISPLAY_COPYRIGHT=0
+<h4 id="利用rdseed解压seed文件，删除一定震中距以外的sac文件，进行滤波，去仪器响应后重命名保存"><a href="#利用rdseed解压seed文件，删除一定震中距以外的sac文件，进行滤波，去仪器响应后重命名保存" class="headerlink" title="利用rdseed解压seed文件，删除一定震中距以外的sac文件，进行滤波，去仪器响应后重命名保存"></a>利用rdseed解压seed文件，删除一定震中距以外的sac文件，进行滤波，去仪器响应后重命名保存</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">#!/bin/zsh</div><div class="line">SAC_DISPLAY_COPYRIGHT=0</div><div class="line"></div><div class="line">#数据路径,按照需要自己修改</div><div class="line">sacfolder=~</div><div class="line"></div><div class="line">#outype为输出数据类型: none-&gt;位移,vel-&gt;速度,acc-&gt;加速度</div><div class="line">outype=none  </div><div class="line"></div><div class="line"></div><div class="line">#滤波参数</div><div class="line">f1=0.004 </div><div class="line">f2=0.007 </div><div class="line">f3=0.2 </div><div class="line">f4=0.4</div><div class="line"></div><div class="line">cd $sacfolder</div><div class="line">for file in *.SEED;</div><div class="line">do</div><div class="line">echo $file</div><div class="line">suffix=$&#123;file%%.*&#125;</div><div class="line">mkdir $suffix  </div><div class="line">cp $file $suffix </div><div class="line">cd $suffix</div><div class="line">mkdir SAC</div><div class="line">rdseed -Rdf $file #提取波形数据和 RESP 仪器响应文件</div><div class="line">rm -rf $file  </div><div class="line">saclst dist f *.SAC &gt; dist.txt                #震中距文件</div><div class="line">rm -rf `saclst dist f *.SAC | gawk &apos;$2&gt;100&apos;`  #震中距&gt;100文件删除 </div><div class="line">  </div><div class="line">for sacfile in *.SAC;  #去仪器响应</div><div class="line">do </div><div class="line">awk $sacfile -F. &apos;&#123;printf &quot;mv %s %s.%s.%s.%s\n&quot;, $0, $7, $8, $9, $10&#125;&apos; | sh</div><div class="line">sac &lt;&lt;EOF</div><div class="line">read $sacfile</div><div class="line">rmean</div><div class="line">rtrend</div><div class="line">lp co 1.0 p 2 n 4</div><div class="line">trans from evalresp to $outype freq $f1 $f2 $f3 $f4</div><div class="line">write $&#123;sacfile&#125;.filtered   </div><div class="line">quit</div><div class="line">EOF</div><div class="line">done</div><div class="line"></div><div class="line">mv *.SAC.filtered SAC</div><div class="line">mv *.txt SAC</div><div class="line">cd SAC</div><div class="line">ls *.SAC.filtered | awk -F. &apos;&#123;printf &quot;mv %s %s.%s.%s.%s.%s.%s.%s.%s\n&quot;,$0,$7,$8,$1,$2,$3,$4,$10,$12&#125;&apos; | sh #文件重命名</div><div class="line">cd ..</div><div class="line">rm *.*</div><div class="line">cd $sacfolder</div><div class="line">done</div></pre></td></tr></table></figure>
 
-#数据路径,按照需要自己修改
-sacfolder=~
-
-#outype为输出数据类型: none-&gt;位移,vel-&gt;速度,acc-&gt;加速度
-outype=none  
-
-
-#滤波参数
-f1=0.004 
-f2=0.007 
-f3=0.2 
-f4=0.4
-
-cd $sacfolder
-for file in *.SEED;
-do
-echo $file
-suffix=${file%%.*}
-mkdir $suffix  
-cp $file $suffix 
-cd $suffix
-mkdir SAC
-rdseed -Rdf $file #提取波形数据和 RESP 仪器响应文件
-rm -rf $file  
-saclst dist f *.SAC &gt; dist.txt                #震中距文件
-rm -rf `saclst dist f *.SAC | gawk &apos;$2&gt;100&apos;`  #震中距&gt;100文件删除 
-
-for sacfile in *.SAC;  #去仪器响应
-do 
-awk $sacfile -F. &apos;{printf &quot;mv %s %s.%s.%s.%s\n&quot;, $0, $7, $8, $9, $10}&apos; | sh
-sac &lt;&lt;EOF
-read $sacfile
-rmean
-rtrend
-lp co 1.0 p 2 n 4
-trans from evalresp to $outype freq $f1 $f2 $f3 $f4
-write ${sacfile}.filtered   
-quit
-EOF
-done
-
-mv *.SAC.filtered SAC
-mv *.txt SAC
-cd SAC
-ls *.SAC.filtered | awk -F. &apos;{printf &quot;mv %s %s.%s.%s.%s.%s.%s.%s.%s\n&quot;,$0,$7,$8,$1,$2,$3,$4,$10,$12}&apos; | sh #文件重命名
-cd ..
-rm *.*
-cd $sacfolder
-done
-</code></pre>
 
 <!--<a href="http://yoursite.com/2018/11/28/sacskill/#disqus_thread" class="article-comment-link">Comments</a>-->
 <div id="disqus_thread"></div>

@@ -24,11 +24,16 @@
 <body>
 
 <h2 class="title">matalb读取数据</h2>
-<h4 id="1-importdata"><a href="#1-importdata" class="headerlink" title="1.importdata"></a>1.importdata</h4><p>导入图片<br>    <code>importdata(&#39;8.jpg&#39;)</code><br>导入带有分隔符和头文件的文件<br>    <code>importdata(filename,delimiterIn,headerlinesIn)</code><br>从剪切板导入数据<br>    <code>importdata(&#39;-pasterspecial&#39;)</code><br>导入数据文件，并输出数据与分隔符<br>    <code>A,delimiterout］=importdata(filename)</code></p>
-<h4 id="2-uiimport"><a href="#2-uiimport" class="headerlink" title="2.uiimport"></a>2.uiimport</h4><p>UI界面导入文件<br>    <code>uiimport(filename)</code></p>
-<h4 id="3-load"><a href="#3-load" class="headerlink" title="3.load"></a>3.load</h4><p>导入文件，亦可指定格式，如mat，-ascii<br>    <code>load(filename,&#39;-mat&#39;)</code><br>    <code>load(filename,&#39;-ascii&#39;)</code></p>
-<h4 id="4-textscan-textread"><a href="#4-textscan-textread" class="headerlink" title="4.textscan,textread"></a>4.textscan,textread</h4><p>导入text文件<br>    <code>testread(filename,format)</code></p>
-<h4 id="5-xlsread"><a href="#5-xlsread" class="headerlink" title="5.xlsread"></a>5.xlsread</h4><p>从excel中读取数据<br>    <code>[num,txt,raw] = xlsread(filename,sheet,range)</code></p>
+<h4 id="importdata"><a href="#importdata" class="headerlink" title="importdata"></a>importdata</h4><ul>
+<li>导入图片<br><code>importdata(&#39;8.jpg&#39;)</code></li>
+<li>导入带有分隔符和头文件的文件<br><code>importdata(filename,delimiterIn,headerlinesIn)</code></li>
+<li>从剪切板导入数据<br><code>importdata(&#39;-pasterspecial&#39;)</code></li>
+<li>导入数据文件，并输出数据与分隔符<br><code>[A,delimiterout］=importdata(filename)</code>    <h4 id="uiimport"><a href="#uiimport" class="headerlink" title="uiimport"></a>uiimport</h4></li>
+<li>UI界面导入文件<br><code>uiimport(filename)</code><h4 id="load"><a href="#load" class="headerlink" title="load"></a>load</h4></li>
+<li>导入文件，亦可指定格式，如mat，-ascii<br><code>load(filename,&#39;-mat&#39;)</code><br><code>load(filename,&#39;-ascii&#39;)</code>    <h4 id="textscan-textread"><a href="#textscan-textread" class="headerlink" title="textscan,textread"></a>textscan,textread</h4></li>
+<li>导入text文件<br><code>testread(filename,format)</code><h4 id="xlsread"><a href="#xlsread" class="headerlink" title="xlsread"></a>xlsread</h4></li>
+<li>从excel中读取数据<br><code>[num,txt,raw] = xlsread(filename,sheet,range)</code></li>
+</ul>
 
 
 <!--<a href="http://yoursite.com/2017/10/18/matalb_readdata/#disqus_thread" class="article-comment-link">Comments</a>-->
