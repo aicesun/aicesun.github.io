@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>other on Aice&#39;s blog</title>
+    <link>http://aicesun.github.io/categories/other/</link>
+    <description>Recent content in other on Aice&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Jul 2015 01:37:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://aicesun.github.io/categories/other/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>归一化</title>
+      <link>http://aicesun.github.io/post/guiyihua/</link>
+      <pubDate>Wed, 01 Jul 2015 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/guiyihua/</guid>
+      <description>归一化是指将有量纲的物理量，经过变换，转化为无量纲的表达式，成为一个纯量。 量纲分析就是通过对系统相关的物理量的单位进行分析，得到系统的数学表</description>
+    </item>
+    
+    <item>
+      <title>skill</title>
+      <link>http://aicesun.github.io/post/skill/</link>
+      <pubDate>Thu, 25 Jun 2015 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/skill/</guid>
+      <description>Admit your mistakes and try to fix them head on. If you are ever in a heated situation, avoid the use of the word &amp;lsquo;you!&amp;rsquo;. It is accusatory and will not help. Instead say &amp;lsquo;I feel&amp;hellip;&amp;rsquo; and go from there. Go to your managers with solutions, instead of problems. Make their job easier, learn how they work, and then ride their coattails up the ladder. Your attitude is everything. Never, ever, ever gossip if you can help it.</description>
+    </item>
+    
+  </channel>
+</rss>

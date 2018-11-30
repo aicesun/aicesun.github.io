@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>matlab绘图属性 - Aice&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="aice" /><meta name="description" content="一、Matlab绘图中用到的直线属性包括： LineStyle：线形 LineWidth：线宽 Color：颜色 MarkerType：标记点的形状" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://aicesun.github.io/post/matlab-plot/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="matlab绘图属性" />
+<meta property="og:description" content="一、Matlab绘图中用到的直线属性包括： LineStyle：线形 LineWidth：线宽 Color：颜色 MarkerType：标记点的形状" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://aicesun.github.io/post/matlab-plot/" /><meta property="article:published_time" content="2018-09-07T01:37:56&#43;08:00"/>
+<meta property="article:modified_time" content="2018-09-07T01:37:56&#43;08:00"/>
+
+<meta itemprop="name" content="matlab绘图属性">
+<meta itemprop="description" content="一、Matlab绘图中用到的直线属性包括： LineStyle：线形 LineWidth：线宽 Color：颜色 MarkerType：标记点的形状">
+
+
+<meta itemprop="datePublished" content="2018-09-07T01:37:56&#43;08:00" />
+<meta itemprop="dateModified" content="2018-09-07T01:37:56&#43;08:00" />
+<meta itemprop="wordCount" content="493">
+
+
+
+<meta itemprop="keywords" content="MATLAB," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="matlab绘图属性"/>
+<meta name="twitter:description" content="一、Matlab绘图中用到的直线属性包括： LineStyle：线形 LineWidth：线宽 Color：颜色 MarkerType：标记点的形状"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aicesun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aicesun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">matlab绘图属性</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-09-07 </span>
+        <div class="post-category">
+            <a href="/categories/matlab/"> MATLAB </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#一-matlab绘图中用到的直线属性包括">一、Matlab绘图中用到的直线属性包括：</a>
+<ul>
+<li><a href="#1-线形">1、线形</a></li>
+<li><a href="#标记符-线形">标记符    线形</a></li>
+<li><a href="#2-点形">2、点形</a></li>
+<li><a href="#标记符-点形">标记符    点形</a></li>
+<li><a href="#3-颜色">3、颜色</a></li>
+<li><a href="#标记符-颜色">标记符    颜色</a></li>
+</ul></li>
+<li><a href="#二-描绘不同的直线">二、描绘不同的直线</a></li>
+<li><a href="#三-描绘数据点的分布">三、描绘数据点的分布</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h3 id="一-matlab绘图中用到的直线属性包括">一、Matlab绘图中用到的直线属性包括：</h3>
+
+<ul>
+<li>LineStyle：线形</li>
+<li>LineWidth：线宽</li>
+<li>Color：颜色</li>
+<li>MarkerType：标记点的形状</li>
+<li>MarkerSize：标记点的大小</li>
+<li>MarkerFaceColor：标记点内部的填充颜色</li>
+<li>MarkerEdgeColor：标记点边缘的颜色
+<br /></li>
+</ul>
+
+<h4 id="1-线形">1、线形</h4>
+
+<h4 id="标记符-线形">标记符    线形</h4>
+
+<ul>
+<li><code>-</code>           实线</li>
+<li><code>--</code>          虚线</li>
+<li><code>：</code>         点线</li>
+<li><code>-.</code>         点横线
+<br /></li>
+</ul>
+
+<h4 id="2-点形">2、点形</h4>
+
+<h4 id="标记符-点形">标记符    点形</h4>
+
+<ul>
+<li><code>+</code>          加号</li>
+<li><code>o</code>          圆圈</li>
+<li><code>*</code>          星号</li>
+<li><code>.</code>          实心点</li>
+<li><code>x</code>         叉号</li>
+<li><code>s</code>         正方形</li>
+<li><code>d</code>         钻石形</li>
+<li><code>^</code>        上三角形</li>
+<li><code>v</code>         下三角形</li>
+<li><code>&gt;</code>        右三角形</li>
+<li><code>&lt;</code>        左三角形</li>
+<li><code>p</code>        五角星形</li>
+<li><code>h</code>        六角星形
+<br /></li>
+</ul>
+
+<h4 id="3-颜色">3、颜色</h4>
+
+<h4 id="标记符-颜色">标记符    颜色</h4>
+
+<ul>
+<li>r             红</li>
+<li>g            绿</li>
+<li>b            蓝</li>
+<li>c          蓝绿</li>
+<li>m         紫红</li>
+<li>y           黄</li>
+<li>k           黑</li>
+<li>w          白
+<br /></li>
+</ul>
+
+<h3 id="二-描绘不同的直线">二、描绘不同的直线</h3>
+
+<p>当我们需要对不同类别的数据点进行连线的时候，可以设置以下属性来区分不同类别的点和相应的直线：
+（1）LineStyle：线形
+（2）MarkerSymbol：点形
+（3）Color：颜色
+例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">plot(x,y,&#39;-.or&#39;,&#39;MarkerFaceColor&#39;,&#39;g&#39;)</pre></td></tr></table>
+</div>
+</div>
+<p>其中线形为点横线，数据点形状为圆圈，线条和数据点边缘的颜色都是红色，数据点的填充颜色为绿色。</p>
+
+<h3 id="三-描绘数据点的分布">三、描绘数据点的分布</h3>
+
+<p>有时候我们希望画出数据点的分布情况，不需要画出这些点之间的连线，则可以按以下方式实现：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">plot(x,y,&#39;d&#39;)</pre></td></tr></table>
+</div>
+</div>
+<p>即只定义数据点的点形。</p>
+
+<p>最后给出一个例子说明怎样运用以上属性来画图：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">plot(t,sin(2*t),&#39;-mo&#39;,&#39;LineWidth&#39;,2,&#39;MarkerEdgeColor&#39;,...
+    &#39;k&#39;,&#39;MarkerFaceColor&#39;,[.49 1 .63],&#39;MarkerSize&#39;,12)</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">aice</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-09-07</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/matlab/">MATLAB</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/gmt-insertmap/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GMT绘制图中图</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/matalb_readdata/">
+            <span class="next-text nav-default">matalb读取数据</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+  <a href="http://aicesun.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">aice</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>双系统安装centos - Aice&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="aice" /><meta name="description" content="centos7开始不分32位和64位，在官网下载x86_64的iso，利用Fedora LiveUSB Creator制作一个U盘启动盘，把ISO镜像也要拷" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://aicesun.github.io/post/centos/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="双系统安装centos" />
+<meta property="og:description" content="centos7开始不分32位和64位，在官网下载x86_64的iso，利用Fedora LiveUSB Creator制作一个U盘启动盘，把ISO镜像也要拷" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://aicesun.github.io/post/centos/" /><meta property="article:published_time" content="2015-06-26T01:37:56&#43;08:00"/>
+<meta property="article:modified_time" content="2017-08-30T01:37:56&#43;08:00"/>
+
+<meta itemprop="name" content="双系统安装centos">
+<meta itemprop="description" content="centos7开始不分32位和64位，在官网下载x86_64的iso，利用Fedora LiveUSB Creator制作一个U盘启动盘，把ISO镜像也要拷">
+
+
+<meta itemprop="datePublished" content="2015-06-26T01:37:56&#43;08:00" />
+<meta itemprop="dateModified" content="2017-08-30T01:37:56&#43;08:00" />
+<meta itemprop="wordCount" content="963">
+
+
+
+<meta itemprop="keywords" content="LINUX," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="双系统安装centos"/>
+<meta name="twitter:description" content="centos7开始不分32位和64位，在官网下载x86_64的iso，利用Fedora LiveUSB Creator制作一个U盘启动盘，把ISO镜像也要拷"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aicesun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aicesun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">双系统安装centos</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-06-26 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> LINUX </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#end"><strong>END</strong></a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<ol>
+<li>centos7开始不分32位和64位，在官网下载x86_64的iso，利用Fedora LiveUSB Creator制作一个U盘启动盘，把<strong>ISO</strong>镜像也要拷贝进去！</li>
+<li>在win下将准备安装linux的逻辑磁盘卸载，右键‘计算机’—‘管理’—‘磁盘管理’，然后右键磁盘选择卸载。</li>
+<li>重启电脑，将<strong>BIOS</strong>里<strong>boot</strong>的<strong>first boot</strong>选为<strong>usb hdd</strong>（具体参照<a href="http://www.baidu.com">百度</a>)</li>
+<li>以上都成功，那么就可以进入安装界面了，安装源选择U盘上的ISO，安装界面选<strong>gnome</strong>，磁盘选<strong>卸载</strong>的那个区，可以分配<strong>4G swap</strong>，<strong>200M boot</strong>、其余都是** ** ，格式为<strong>ext4（lvm）</strong>，仍可参照<a href="http://www.baidu.com">百度</a>。</li>
+<li>一路安装出来重启就可以进入centos，这时候你会发现win7不见了，不着急。</li>
+<li>打开终端，添加管理员权限:
+<code>sudoedit /etc/sudoers</code><br />
+找到<code>root ALL=(ALL)  ALL</code>，<br />
+在下面添加<code>xxx（你的用户名） ALL=(ALL)  ALL</code><br /></li>
+<li>添加<strong>EPEL</strong>源<br />
+<code>wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm</code>（版本随时增加，可以点进去看版本号）<br />
+<code>sudo rpm -ivh epel-release-7-2.noarch.rpm</code><br />
+<code>sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7</code><br />
+<code>sudo yum install yum-axelget</code>（添加一个yum插件）<br />
+<code>sudo yum update</code>（升级下）<br /></li>
+<li>挂载NFS文件系统，挂载NTFS格式的硬盘<br />
+<code>sudo yum install nfs-utils ntfs-3g</code><br />
+安装完成后，就能点开ntfs分区了，把所有分区都点开！<br />
+然后<br />
+<code>sudo grub2-mkconfig -o /boot/grub2/grub.cfg</code><br />
+出现windows的字样后，就表示找到了win下的引导文件，重启就有了windows引导。<br /></li>
+<li>切换到<strong>su</strong>下，把下列工具都装上<br />
+<code>yum install p7zip</code>           # 7z格式压缩和解压<br />
+<code>yum install git</code>             # 源码版本控制<br />
+<code>yum install xclip</code>           # 终端的文本复制工具<br />
+<code>yum install ImageMagick</code>     # 其中的import和convert命令很有用<br />
+<code>yum install gcc</code>                         # C编译器<br />
+<code>yum install gcc-c++</code>                 　  # C++编译器<br />
+<code>yum install gcc-gfortran</code>                # Fortran编译器<br />
+<code>yum install compat-gcc-44</code>               # 兼容gcc 4.4<br />
+<code>yum install compat-gcc-44-c++</code>           # 兼容gcc-c++ 4.4<br />
+<code>yum install compat-gcc-44-gfortran</code>      # 兼容gcc-fortran 4.4<br />
+<code>yum install compat-libf2c-34</code>            # g77 3.4.x兼容库<br />
+<code>yum install gdb</code>                         # 代码调试器<br />
+<code>yum install java</code>                        # java运行环境<br />
+<code>yum install clang</code>               # clang编译器<br />
+<code>yum install clang-analyze</code>      # clang静态分析器<br />
+<code>yum install cmake</code><br /></li>
+
+<li><p>安装<strong>sac</strong>和<strong>gmt</strong><br />
+<code>sudo yum install gcc-c++ libXt-devel libXaw-devel libXmu-devel libSM-devel</code><br />
+<code>sudo yum install netcdf-devel</code><br />
+<code>wget ftp://ftp.soest.hawaii.edu/gmt/gmt-4.5.12-src.tar.bz2</code><br />
+<code>wget ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.2.tar.gz</code><br />
+<code>tar -jxvf gmt-4.5.12-src.tar.bz2</code><br />
+<code>cd GMT-4.5.12</code><br />
+<code>./configure --prefix=/usr/local/GMT-4.5.12</code><br />
+<code>make</code><br />
+<code>sudo make install-all</code><br />
+<code>tar -zxvf gshhg-gmt-2.3.2.tar.gz</code><br />
+<code>sudo cp -r gshhg-gmt-2.3.2 /usr/local/GMT-4.5.12/share/coast</code><br />
+然后在<strong>./bashrc</strong>中增加环境变量<br />
+<code>vim ~/.bashrc</code><br />
+<code>export GMTHOME=/usr/local/GMT-4.5.12</code><br />
+<code>export PATH=${GMTHOME}/bin:$PATH</code><br />
+安装<strong>sac</strong><br />
+<code>sudo yum groupinstall 'Development Tools'</code><br />
+<code>sudo yum install glibc ncurses-devel libSM-devel libICE-devel \libXpm-devel   libX11-devel zlib-devel</code><br />
+<code>tar -zxvf sac-101.6a-linux_x86_64.tar.gz</code><br />
+<code>sudo cp -r sac /usr/local</code><br />
+<code>vim ~/.bashrc</code><br />
+在<strong>./bashrc</strong>中添加：<br />
+<code>export SACHOME=/usr/local/sac</code><br />
+<code>export SACAUX=$SACHOME/aux</code><br />
+<code>export PATH=$SACHOME/bin:$PATH</code><br />
+<code>export SAC_DISPLAY_COPYRIGHT=1</code><br />
+<code>export SAC_PPK_LARGE_CROSSHAIRS=1</code><br />
+<code>export SAC_USE_DATABASE=0</code><br />
+保存退出<br />
+<code>source ~/.bashrc</code></p>
+
+<h4 id="end"><strong>END</strong></h4>
+
+<p>@本文部分内容引自<a href="http://seisman.info/">Seisman</a></p></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">aice</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-08-30</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">LINUX</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/guiyihua/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">归一化</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/matlab_output/">
+            <span class="next-text nav-default">matlab数值字符合并输出</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+  <a href="http://aicesun.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">aice</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

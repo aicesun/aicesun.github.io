@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MATLAB on Aice&#39;s blog</title>
+    <link>http://aicesun.github.io/categories/matlab/</link>
+    <description>Recent content in MATLAB on Aice&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Nov 2018 01:37:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://aicesun.github.io/categories/matlab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>字符串处理</title>
+      <link>http://aicesun.github.io/post/matlabskill2/</link>
+      <pubDate>Wed, 28 Nov 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/matlabskill2/</guid>
+      <description>字符串处理 MATLAB 拆分 正则表达式函数regexp的split模式 S = regexp(str, char, &#39;split&#39;) 在指定的分隔符处拆分字符串 strfind C = strsplit(str) 在空白处将 str 拆分为 C。空白字符等效于集</description>
+    </item>
+    
+    <item>
+      <title>matlab绘图属性</title>
+      <link>http://aicesun.github.io/post/matlab-plot/</link>
+      <pubDate>Fri, 07 Sep 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/matlab-plot/</guid>
+      <description>一、Matlab绘图中用到的直线属性包括： LineStyle：线形 LineWidth：线宽 Color：颜色 MarkerType：标记点的形状</description>
+    </item>
+    
+    <item>
+      <title>matalb读取数据</title>
+      <link>http://aicesun.github.io/post/matalb_readdata/</link>
+      <pubDate>Wed, 18 Oct 2017 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/matalb_readdata/</guid>
+      <description>matalb读取数据 importdata 导入图片 importdata(&#39;8.jpg&#39;) 导入带有分隔符和头文件的文件 importdata(filename,delimiterIn,headerlinesIn) 从剪切板导入数据 importdata(&#39;-pasterspecial&#39;) 导入数据文件，并输出数据与分隔符 [A,delimiterou</description>
+    </item>
+    
+    <item>
+      <title>matlab运算技巧</title>
+      <link>http://aicesun.github.io/post/matlabskill/</link>
+      <pubDate>Mon, 13 Jul 2015 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/matlabskill/</guid>
+      <description>一、运算速度 优先使用内建函数，尤其在遇到很多for循环情况时，多使用内建函数来代替循环，如:bsxfun、arrayfun、spfun、st</description>
+    </item>
+    
+    <item>
+      <title>matlab数值字符合并输出</title>
+      <link>http://aicesun.github.io/post/matlab_output/</link>
+      <pubDate>Thu, 25 Jun 2015 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/matlab_output/</guid>
+      <description>1 2 3 4 5 6 7 8 9 data=[1 2 3 4;5 9 8 7;8 9 7 8;1 5 6 7]; fileID = fopen(&amp;#39;data.txt&amp;#39;,&amp;#39;w&amp;#39;); [h s]=size(data); for m=1:h fprintf(fileID,&amp;#39;Node:\t&amp;#39;); fprintf(fileID,&amp;#39;%f\t&amp;#39;,data(m,:)); fprintf(fileID,&amp;#39;\n&amp;#39;) end fclose(fileID) 结果为： 1 2 3 4 Node: 1.000000 2.000000 3.000000 4.000000 Node: 5.000000 9.000000 8.000000 7.000000 Node: 8.000000 9.000000 7.000000 8.000000 Node: 1.000000 5.000000 6.000000 7.000000</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LINUX on Aice&#39;s blog</title>
+    <link>http://aicesun.github.io/categories/linux/</link>
+    <description>Recent content in LINUX on Aice&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 26 Jun 2015 01:37:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://aicesun.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>双系统安装centos</title>
+      <link>http://aicesun.github.io/post/centos/</link>
+      <pubDate>Fri, 26 Jun 2015 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/centos/</guid>
+      <description>centos7开始不分32位和64位，在官网下载x86_64的iso，利用Fedora LiveUSB Creator制作一个U盘启动盘，把ISO镜像也要拷</description>
+    </item>
+    
+  </channel>
+</rss>

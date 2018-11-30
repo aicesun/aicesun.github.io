@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SAC on Aice&#39;s blog</title>
+    <link>http://aicesun.github.io/tags/sac/</link>
+    <description>Recent content in SAC on Aice&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 28 Nov 2018 01:37:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://aicesun.github.io/tags/sac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>利用rdseed和sac对seed文件进行数据处理</title>
+      <link>http://aicesun.github.io/post/sacskill/</link>
+      <pubDate>Wed, 28 Nov 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/sacskill/</guid>
+      <description>利用rdseed解压seed文件，删除一定震中距以外的sac文件，进行滤波，去仪器响应后重命名保存 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21</description>
+    </item>
+    
+  </channel>
+</rss>

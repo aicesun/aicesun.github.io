@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://aicesun.github.io/sitemap.xml

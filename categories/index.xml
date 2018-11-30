@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Aice&#39;s blog</title>
+    <link>http://aicesun.github.io/categories/</link>
+    <description>Recent content in Categories on Aice&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	<atom:link href="http://aicesun.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GMT</title>
+      <link>http://aicesun.github.io/categories/gmt/</link>
+      <pubDate>Wed, 07 Nov 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/gmt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LINUX</title>
+      <link>http://aicesun.github.io/categories/linux/</link>
+      <pubDate>Fri, 26 Jun 2015 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MATLAB</title>
+      <link>http://aicesun.github.io/categories/matlab/</link>
+      <pubDate>Wed, 28 Nov 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/matlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PYTHON</title>
+      <link>http://aicesun.github.io/categories/python/</link>
+      <pubDate>Wed, 28 Nov 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RDSEED</title>
+      <link>http://aicesun.github.io/categories/rdseed/</link>
+      <pubDate>Wed, 28 Nov 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/rdseed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SAC</title>
+      <link>http://aicesun.github.io/categories/sac/</link>
+      <pubDate>Wed, 28 Nov 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/sac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SHELL</title>
+      <link>http://aicesun.github.io/categories/shell/</link>
+      <pubDate>Wed, 28 Nov 2018 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>other</title>
+      <link>http://aicesun.github.io/categories/other/</link>
+      <pubDate>Wed, 01 Jul 2015 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/other/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>地球物理</title>
+      <link>http://aicesun.github.io/categories/%E5%9C%B0%E7%90%83%E7%89%A9%E7%90%86/</link>
+      <pubDate>Thu, 21 Sep 2017 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/categories/%E5%9C%B0%E7%90%83%E7%89%A9%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

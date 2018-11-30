@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>地球物理 on Aice&#39;s blog</title>
+    <link>http://aicesun.github.io/categories/%E5%9C%B0%E7%90%83%E7%89%A9%E7%90%86/</link>
+    <description>Recent content in 地球物理 on Aice&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Sep 2017 01:37:56 +0800</lastBuildDate>
+    
+	<atom:link href="http://aicesun.github.io/categories/%E5%9C%B0%E7%90%83%E7%89%A9%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于exsim的一些问题</title>
+      <link>http://aicesun.github.io/post/exsim/</link>
+      <pubDate>Thu, 21 Sep 2017 01:37:56 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/exsim/</guid>
+      <description>Stress-Drop问题 应力降是控制模拟结果的重要参数，直接影响幅值大小，但同样也是最不确定的值．这里的应力降与地球物理中的应力降是不是同</description>
+    </item>
+    
+  </channel>
+</rss>

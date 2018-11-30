@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>字符串处理 - Aice&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="aice" /><meta name="description" content="字符串处理 MATLAB 拆分 正则表达式函数regexp的split模式 S = regexp(str, char, &#39;split&#39;) 在指定的分隔符处拆分字符串 strfind C = strsplit(str) 在空白处将 str 拆分为 C。空白字符等效于集" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.52 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://aicesun.github.io/post/matlabskill2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="字符串处理" />
+<meta property="og:description" content="字符串处理 MATLAB 拆分 正则表达式函数regexp的split模式 S = regexp(str, char, &#39;split&#39;) 在指定的分隔符处拆分字符串 strfind C = strsplit(str) 在空白处将 str 拆分为 C。空白字符等效于集" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://aicesun.github.io/post/matlabskill2/" /><meta property="article:published_time" content="2018-11-28T01:37:56&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-28T01:37:56&#43;08:00"/>
+
+<meta itemprop="name" content="字符串处理">
+<meta itemprop="description" content="字符串处理 MATLAB 拆分 正则表达式函数regexp的split模式 S = regexp(str, char, &#39;split&#39;) 在指定的分隔符处拆分字符串 strfind C = strsplit(str) 在空白处将 str 拆分为 C。空白字符等效于集">
+
+
+<meta itemprop="datePublished" content="2018-11-28T01:37:56&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-28T01:37:56&#43;08:00" />
+<meta itemprop="wordCount" content="709">
+
+
+
+<meta itemprop="keywords" content="MATLAB,PYTHON," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="字符串处理"/>
+<meta name="twitter:description" content="字符串处理 MATLAB 拆分 正则表达式函数regexp的split模式 S = regexp(str, char, &#39;split&#39;) 在指定的分隔符处拆分字符串 strfind C = strsplit(str) 在空白处将 str 拆分为 C。空白字符等效于集"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aicesun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aicesun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">字符串处理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-28 </span>
+        <div class="post-category">
+            <a href="/categories/matlab/"> MATLAB </a>
+            <a href="/categories/python/"> PYTHON </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#字符串处理">字符串处理</a>
+<ul>
+<li><a href="#matlab">MATLAB</a>
+<ul>
+<li><a href="#拆分">拆分</a></li>
+<li><a href="#查找">查找</a></li>
+<li><a href="#判断">判断</a></li>
+<li><a href="#联接">联接</a></li>
+</ul></li>
+<li><a href="#python">PYTHON</a>
+<ul>
+<li><a href="#拆分-1">拆分</a></li>
+<li><a href="#替换">替换</a></li>
+<li><a href="#查找-1">查找</a></li>
+<li><a href="#判断-1">判断</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h3 id="字符串处理">字符串处理</h3>
+
+<h4 id="matlab">MATLAB</h4>
+
+<h5 id="拆分">拆分</h5>
+
+<ul>
+<li><p>正则表达式函数regexp的split模式
+<code>S = regexp(str, char, 'split')</code></p></li>
+
+<li><p>在指定的分隔符处拆分字符串 strfind
+<code>C = strsplit(str)</code> 在空白处将 str 拆分为 C。空白字符等效于集合 {&rsquo; &lsquo;,&rsquo;\f&rsquo;,&rsquo;\n&rsquo;,&rsquo;\r&rsquo;,&rsquo;\t&rsquo;,&rsquo;\v&rsquo;} 中的任何转义序列。
+<code>C = strsplit(str,delimiter)</code> 在 delimiter 指定的分隔符处拆分 str。
+<code>C = strsplit(str,delimiter,Name,Value)</code>使用一个或多个名称-值对组参数指定其他分隔符选项。
+<code>[C,matches] = strsplit(___)</code> 还返回数组 matches。matches 输出参数包含 strsplit 拆分 str 时遇到的所有分隔符。您可以将此语法与前面语法中的任何输入参数结合使用。</p></li>
+
+<li><p>拆分字符串数组中的字符串 split
+<code>newStr = split(str)</code> 在空白字符处拆分 str 并以输出数组 newStr 的形式返回结果。
+<code>newStr = split(str,delimiter)</code> 在 delimiter 指定的分隔符处拆分 str 的每个元素。输出 newStr 不包括分隔符。
+<code>newStr = split(str,delimiter,dim)</code> 将 str 的每个元素拆分为一个向量，该向量的方向为 dim 指定的维度方向。</p></li>
+
+<li><p>所选的字符串部分 strtok
+<code>strtok(str)</code> 从左到右解析 str，使用空白字符作为分隔符，并在 token 中返回部分或全部文本。</p></li>
+</ul>
+
+<h5 id="查找">查找</h5>
+
+<ul>
+<li>在一个字符串内查找另一个字符串 strfind</li>
+</ul>
+
+<h5 id="判断">判断</h5>
+
+<ul>
+<li>比较字符串 strcmp</li>
+</ul>
+
+<h5 id="联接">联接</h5>
+
+<ul>
+<li>联接数组中的文本 strjoin</li>
+</ul>
+
+<h4 id="python">PYTHON</h4>
+
+<h5 id="拆分-1">拆分</h5>
+
+<ul>
+<li><p>split() 方法可以将长字符串拆分成一个列表。split() 方法可接收两个参数，第一个参数是分隔符，即用来分隔字符串的字符，默认是所有的空字符，包括空格、换行( )、制表符(    )等。拆分过程会消耗分隔符，所以拆分结果中不包含分隔符。split() 方法的第二个参数是一个数字，默认是缺省，缺省时全分隔，也可以用 maxsplit 来指定拆分次数。split() 方法是从左往右遍历，与之相对，rsplit() 方法是从右往左遍历，比较少用。</p></li>
+
+<li><p>splitlines() ，这个方法会按行拆分字符串，它接收一个参数 True 或 False ，分别决定换行符是否会被保留，默认值 False ，即不保留换行符。</p></li>
+</ul>
+
+<h5 id="替换">替换</h5>
+
+<h5 id="查找-1">查找</h5>
+
+<ul>
+<li><p>正则表达式</p></li>
+
+<li><p>re模块
+re 模块则提供了 match() 、find() 及 findall() 等方法</p></li>
+</ul>
+
+<h5 id="判断-1">判断</h5>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">aice</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-11-28</span>
+  </p>
+  
+  
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/matlab/">MATLAB</a>
+          <a href="/tags/python/">PYTHON</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/sacskill/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">利用rdseed和sac对seed文件进行数据处理</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/gmtskill/">
+            <span class="next-text nav-default">GMT skill</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+  <a href="http://aicesun.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">aice</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
