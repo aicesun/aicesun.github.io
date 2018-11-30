@@ -1,0 +1,58 @@
+<html>
+<head>
+	
+	<title>关于exsim的一些问题</title>
+	<meta name="keywords" content="python,matlab,GMT,shell" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 class="title">关于exsim的一些问题</h2>
+<h4 id="Stress-Drop问题"><a href="#Stress-Drop问题" class="headerlink" title="Stress-Drop问题"></a>Stress-Drop问题</h4><p>应力降是控制模拟结果的重要参数，直接影响幅值大小，但同样也是最不确定的值．这里的应力降与地球物理中的应力降是不是同一个概念？从种种文献以及模拟结果看，两者并不完全相同，如何定义以及如何确定这个值是一个问题．很多研究结果是从记录到的加速度时程中反演得到应力降，但这并不能解释这个值的物理意义．</p>
+<h4 id="断层参数"><a href="#断层参数" class="headerlink" title="断层参数"></a>断层参数</h4><p>断层参数往往通过经验关系得到，但是这个值不确定性太大．而且和上边界位置的取值有很大关系．上边界的经纬度不是很好给定的，还需要进行进一步计算．关于断层深度指的是上边界深度？SCEC里取得是顶端深度，但随着震源位置的不确定，上边界距离也是不确定的，除非有很准确的反演结果．<br>经验关系得到的断层参数往往与实际值不一致，同时也会导致应力降的不同．</p>
+<h4 id="其他参数"><a href="#其他参数" class="headerlink" title="其他参数"></a>其他参数</h4><p>路径持时影响时程的形状．<br>kappa取值影响高频端．需要大量数据进行拟合．</p>
+
+
+<!--<a href="http://yoursite.com/2017/09/21/exsim/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'undefined'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

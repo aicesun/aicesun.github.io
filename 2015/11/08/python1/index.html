@@ -1,0 +1,56 @@
+<html>
+<head>
+	
+	<title>计算PGA的python程序</title>
+	<meta name="keywords" content="python,matlab,GMT,shell" />
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--<link rel="stylesheet" href="/css/main.css">-->
+	<link href="/css/main.css?v=2" rel="stylesheet" type="text/css" />
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    
+
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+    
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2"/>
+    
+
+</head>
+
+<body>
+
+<h2 class="title">计算PGA的python程序</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line">import numpy as np</div><div class="line">import math</div><div class="line">import os,glob</div><div class="line">import string</div><div class="line">import matplotlib.pyplot as plt</div><div class="line">from pylab import *</div><div class="line">import datetime</div><div class="line">starttime = datetime.datetime.now()</div><div class="line">def computepga(Accelerate,LN,damp,Freq,nFreq):</div><div class="line">              n =LN</div><div class="line">              dt = 0.02</div><div class="line">              zeta = damp</div><div class="line">              nfreq = nFreq</div><div class="line">              freq = Freq</div><div class="line">              MAcc = [0]*nfreq </div><div class="line">              absacc = [0]*n</div><div class="line">              for s in range(n):</div><div class="line">                            absacc[s] = abs( string.atof(Accelerate[s]) ) </div><div class="line">              for k in range(nfreq):</div><div class="line">                            Damfreq = freq[k] * sqrt( 1-zeta**2 )</div><div class="line">                            e_t  = math.exp( - zeta * dt * freq[k] )</div><div class="line">                            ss = math.sin( Damfreq * dt )</div><div class="line">                            cc = math.cos( Damfreq * dt )</div><div class="line">                            d_f = ( 2 * zeta**2 - 1 ) / ( (freq[k])**2 * dt )</div><div class="line">                            d_3t = zeta / ( freq[k]**3 * dt )</div><div class="line">                            A00= e_t*( ss * zeta/sqrt(1-zeta*zeta)+cc )</div><div class="line">                            A01= e_t*( ss/Damfreq )</div><div class="line">                            A10 =  -freq[k] * e_t * ss/sqrt(1-zeta*zeta)</div><div class="line">                            A11 =   e_t * ( -ss * zeta / sqrt(1-zeta*zeta) + cc )</div><div class="line">                            B00 =   e_t * (( d_f+zeta / freq[k] ) * ss/Damfreq+( 2*d_3t+1 / freq[k]**2) * cc )-2*d_3t</div><div class="line">                            B01 =  -e_t * ( d_f * ss/Damfreq + 2*d_3t*cc ) - 1/freq[k]**2 + 2*d_3t</div><div class="line">                            B10  =  e_t * ( (d_f +zeta/freq[k] ) * (cc - zeta/sqrt(1-zeta**2) *ss ) - ( 2*d_3t+1/freq[k]**2 ) * ( Damfreq*ss+zeta*freq[k]*cc) )+1/( freq[k]**2*dt )</div><div class="line">                            B11 =   e_t * ( 1/(freq[k]**2*dt )*cc+ss*zeta/( freq[k]*Damfreq*dt ))-1/( freq[k]**2*dt )           </div><div class="line">                            Displace = [0]*(n+1)</div><div class="line">                            Velocity = [0]*(n+1)</div><div class="line">                            AbsAcce = [0]*(n+1)</div><div class="line">                            absabsAcc = [0]*(n+1)</div><div class="line">                            for j in range(n-1):</div><div class="line">                                          Displace[j+1] = A00*Displace[j]+A01*Velocity[j]+B11*float(Accelerate[j])+B01*float(Accelerate[j+1]) </div><div class="line">                                          Velocity[j+1] = A10*Displace[j]+A11*Velocity[j]+B10*float(Accelerate[j])+B11*float(Accelerate[j+1]) </div><div class="line">                                          AbsAcce[j+1]  = -2*zeta*freq[k]*Velocity[j+1] -freq[k]**2*Displace[j+1]</div><div class="line">                                          absabsAcc[j+1] = abs(AbsAcce[j+1])</div><div class="line">                            if freq[k]&gt;=10**10:</div><div class="line">                                          MAcc[k] = max(absacc)</div><div class="line">                            else:</div><div class="line">                                          MAcc[k] = max(absabsAcc)</div><div class="line">              return MAcc</div><div class="line">accfile = glob.glob(&apos;xj30bar/ACC/*S001*.acc&apos;)</div><div class="line">numsite = len(accfile)</div><div class="line">print &quot;the number of site is: &quot;,numsite</div><div class="line">damp = 0.05</div><div class="line">Freq1 = 0.1</div><div class="line">Freq2 = 50</div><div class="line">nFreq = 100</div><div class="line">Frinc = math.log(Freq2/Freq1)/(nFreq-1)</div><div class="line">Freq = [0]*nFreq</div><div class="line">T = [0]*nFreq</div><div class="line">Freq[0] = Freq1</div><div class="line">for k in range(nFreq):</div><div class="line">             Freq[k] = Freq1*math.exp(k*Frinc)</div><div class="line">             T[k] = 1/Freq[k]</div><div class="line">PGA = [[0]*nFreq]*numsite</div><div class="line">for idx in range(numsite):</div><div class="line">            filename = accfile[idx]</div><div class="line">            file =  open(filename,&apos;r&apos;)</div><div class="line">            linesList = file.readlines()</div><div class="line">            linesList = [line.strip().split() for line in linesList]</div><div class="line">            file.close()</div><div class="line">            tm = [x[0] for x in linesList[17:65552]]</div><div class="line">            acc = [x[1] for x in linesList[17:65552]]</div><div class="line">            LN =len(acc)</div><div class="line">            print &quot;computing&quot;, filename</div><div class="line">            PGA = computepga(acc,LN,damp,Freq,nFreq)</div><div class="line">            plt.figure(1)       </div><div class="line">            plt.loglog(T,PGA,label = &apos;%d&apos; %(idx+1))</div><div class="line">            plt.grid()</div><div class="line">            plt.title(&quot;PGA&quot;)</div><div class="line">            plt.xlabel(&quot;T&quot;)</div><div class="line">            plt.ylabel(&quot;PGA&quot;)</div><div class="line">            plt.legend()</div><div class="line">print &apos;plot figure now&apos;     </div><div class="line">endtime = datetime.datetime.now()</div><div class="line">print (endtime - starttime).seconds,&apos;seconds&apos;</div><div class="line">plt.show()</div><div class="line">print(&apos;happy end&apos;)</div></pre></td></tr></table></figure>
+
+
+<!--<a href="http://yoursite.com/2015/11/08/python1/#disqus_thread" class="article-comment-link">Comments</a>-->
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'undefined'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div style="display:none">
+<script src="http://s4.cnzz.com/stat.php?id=undefined&web_id=undefined" language="JavaScript"></script>script>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
