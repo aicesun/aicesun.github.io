@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SHELL on Aice&#39;s blog</title>
+    <title>SHELL on Less Is More</title>
     <link>http://aicesun.github.io/categories/shell/</link>
-    <description>Recent content in SHELL on Aice&#39;s blog</description>
+    <description>Recent content in SHELL on Less Is More</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 28 Nov 2018 01:37:56 +0800</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 28 Nov 2018 01:37:56 +0800</pubDate>
       
       <guid>http://aicesun.github.io/post/shellskill/</guid>
-      <description></description>
+      <description>lsof 列出当前操作系统打开的所有文件描述符 CTRL + L 和clear的功能一样能够快速清空当前的terminal xargs 能够将上一个程序的标准输出传给下一个程</description>
     </item>
     
     <item>
