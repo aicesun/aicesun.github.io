@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Less Is More</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Nov 2018 01:37:56 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 22:06:45 +0800</lastBuildDate>
     
 	<atom:link href="http://aicesun.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Js study</title>
+      <link>http://aicesun.github.io/post/jsppt/</link>
+      <pubDate>Fri, 08 Feb 2019 22:06:45 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/jsppt/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>shell skill</title>
@@ -44,8 +53,7 @@
       <pubDate>Wed, 07 Nov 2018 01:37:56 +0800</pubDate>
       
       <guid>http://aicesun.github.io/post/gmtskill/</guid>
-      <description>grd convert xyz
-grd2xyz</description>
+      <description>gmtset − To change individual GMT default parameters PAGE_COLOR = white #纸张的背景色,不能透明 PAGE_ORIENTATION = landscape # portrait或landscape PAPER_MEDIA = a4 #纸张大小 ANNOT_MIN_SPACING = 0 #相邻注释之间的最小距离 ANNOT_FONT_PRIMARY =</description>
     </item>
     
     <item>

@@ -16,15 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="aice" /><meta name="description" content="grd convert xyz
-grd2xyz" />
+<meta name="author" content="aice" /><meta name="description" content="gmtset − To change individual GMT default parameters PAGE_COLOR = white #纸张的背景色,不能透明 PAGE_ORIENTATION = landscape # portrait或landscape PAPER_MEDIA = a4 #纸张大小 ANNOT_MIN_SPACING = 0 #相邻注释之间的最小距离 ANNOT_FONT_PRIMARY =" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.52 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.54.0 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://aicesun.github.io/post/gmtskill/" />
@@ -40,28 +39,26 @@ grd2xyz" />
 
 
 <meta property="og:title" content="GMT skill" />
-<meta property="og:description" content="grd convert xyz
-grd2xyz" />
+<meta property="og:description" content="gmtset − To change individual GMT default parameters PAGE_COLOR = white #纸张的背景色,不能透明 PAGE_ORIENTATION = landscape # portrait或landscape PAPER_MEDIA = a4 #纸张大小 ANNOT_MIN_SPACING = 0 #相邻注释之间的最小距离 ANNOT_FONT_PRIMARY =" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://aicesun.github.io/post/gmtskill/" /><meta property="article:published_time" content="2018-11-07T01:37:56&#43;08:00"/>
+<meta property="og:url" content="http://aicesun.github.io/post/gmtskill/" />
+<meta property="article:published_time" content="2018-11-07T01:37:56&#43;08:00"/>
 <meta property="article:modified_time" content="2018-11-08T01:37:56&#43;08:00"/>
 
 <meta itemprop="name" content="GMT skill">
-<meta itemprop="description" content="grd convert xyz
-grd2xyz">
+<meta itemprop="description" content="gmtset − To change individual GMT default parameters PAGE_COLOR = white #纸张的背景色,不能透明 PAGE_ORIENTATION = landscape # portrait或landscape PAPER_MEDIA = a4 #纸张大小 ANNOT_MIN_SPACING = 0 #相邻注释之间的最小距离 ANNOT_FONT_PRIMARY =">
 
 
 <meta itemprop="datePublished" content="2018-11-07T01:37:56&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-08T01:37:56&#43;08:00" />
-<meta itemprop="wordCount" content="4">
+<meta itemprop="wordCount" content="343">
 
 
 
 <meta itemprop="keywords" content="GMT," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GMT skill"/>
-<meta name="twitter:description" content="grd convert xyz
-grd2xyz"/>
+<meta name="twitter:description" content="gmtset − To change individual GMT default parameters PAGE_COLOR = white #纸张的背景色,不能透明 PAGE_ORIENTATION = landscape # portrait或landscape PAPER_MEDIA = a4 #纸张大小 ANNOT_MIN_SPACING = 0 #相邻注释之间的最小距离 ANNOT_FONT_PRIMARY ="/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -142,12 +139,68 @@ grd2xyz"/>
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#gmtset">gmtset</a></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>grd convert xyz<br />
-<code>grd2xyz</code></p>
+      
+
+<h2 id="gmtset">gmtset</h2>
+
+<ul>
+<li>− To change individual GMT default parameters<br /></li>
+</ul>
+
+<hr />
+
+<ul>
+<li>PAGE_COLOR = white #纸张的背景色,不能透明</li>
+<li>PAGE_ORIENTATION = landscape # portrait或landscape</li>
+<li>PAPER_MEDIA = a4 #纸张大小</li>
+<li>ANNOT_MIN_SPACING = 0 #相邻注释之间的最小距离</li>
+<li>ANNOT_FONT_PRIMARY = Helvetica #主注释字体,系统自带35种</li>
+<li>ANNOT_FONT_SIZE_PRIMARY = 14p  #主注释文字大小</li>
+<li>ANNOT_OFFSET_PRIMARY = 0.2c #主注释与刻度之间的距离</li>
+<li>ANNOT_FONT_SECONDARY = Helvetica #次注释字体</li>
+<li>ANNOT_FONT_SIZE_SECONDARY = 16p #次注释大小</li>
+<li>ANNOT_OFFSET_SECONDARY = 0.2c #次注释的底部与主注释顶部的距离</li>
+<li>DEGREE_SYMBOL = ring #如何表示度这个符号</li>
+<li>HEADER_FONT = Helvetica # 标题字体</li>
+<li>HEADER_FONT_SIZE = 36p #标题大小</li>
+<li>HEADER_OFFSET = 0.5c #标题与上边界的距离</li>
+<li>LABEL_FONT = Helvetica #</li>
+<li>LABEL_FONT_SIZE = 24p #</li>
+<li>LABEL_OFFSET = 0.3c #</li>
+<li>OBLIQUE_ANNOTATION = 1 #</li>
+<li>PLOT_CLOCK_FORMAT = hh:mm:ss #绘图时间格式</li>
+<li>PLOT_DATE_FORMAT = yyyy-mm-dd #绘图日期格式</li>
+<li>PLOT_DEGREE_FORMAT = ddd:mm:ss #绘图度格式</li>
+<li>Y_AXIS_TYPE = hor_text # y轴注释水平还是垂直</li>
+<li>BASEMAP_AXES = WESN #控制在哪条边上注释</li>
+<li>BASEMAP_FRAME_RGB = black #底图frame颜色</li>
+<li>BASEMAP_TYPE = fancy # (inside,graph,plain, fancy)</li>
+<li>FRAME_PEN = 1.25p # plain frame的宽度</li>
+<li>FRAME_WIDTH = 0.2c #fancy frame的宽度</li>
+<li>GRID_CROSS_SIZE_PRIMARY = 0c #主注释经纬度交线处十字叉的尺寸,0表示连续的网格线</li>
+<li>GRID_PEN_PRIMARY = 0.25p # 线的宽度<br /></li>
+</ul>
+
+<hr />
+
+<p><img src="/img/gmt1.png" width="500" aligh=center /></p>
+
+<p><img src="/img/gmt2.png" width="500" aligh=center /></p>
+
+<p><img src="/img/gmt3.png" width="500" aligh=center /></p>
+
+<p><img src="/img/gmt4.png" width="500" aligh=center /></p>
 
     </div>
 
@@ -206,7 +259,8 @@ grd2xyz"/>
 
   <span class="copyright-year">
     &copy; 
-    2018
+    2018 - 
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
