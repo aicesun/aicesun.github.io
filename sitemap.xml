@@ -156,13 +156,6 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/gmt/</loc>
-    <lastmod>2019-04-09T12:05:55+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://aicesun.github.io/tags/gmt/</loc>
     <lastmod>2019-04-09T12:05:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -170,14 +163,21 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/linux/</loc>
-    <lastmod>2017-08-30T01:37:56+08:00</lastmod>
+    <loc>http://aicesun.github.io/categories/gmt/</loc>
+    <lastmod>2019-04-09T12:05:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://aicesun.github.io/tags/linux/</loc>
+    <lastmod>2017-08-30T01:37:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://aicesun.github.io/categories/linux/</loc>
     <lastmod>2017-08-30T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -191,13 +191,6 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/matlab/</loc>
-    <lastmod>2018-11-28T01:37:56+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://aicesun.github.io/tags/matlab/</loc>
     <lastmod>2018-11-28T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/python/</loc>
+    <loc>http://aicesun.github.io/categories/matlab/</loc>
     <lastmod>2018-11-28T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -219,15 +212,15 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/post/</loc>
-    <lastmod>2019-04-09T12:05:55+08:00</lastmod>
+    <loc>http://aicesun.github.io/categories/python/</loc>
+    <lastmod>2018-11-28T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/rdseed/</loc>
-    <lastmod>2018-11-28T01:37:56+08:00</lastmod>
+    <loc>http://aicesun.github.io/post/</loc>
+    <lastmod>2019-04-09T12:05:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -240,7 +233,7 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/sac/</loc>
+    <loc>http://aicesun.github.io/categories/rdseed/</loc>
     <lastmod>2018-11-28T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -254,7 +247,7 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/shell/</loc>
+    <loc>http://aicesun.github.io/categories/sac/</loc>
     <lastmod>2018-11-28T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -268,15 +261,15 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/tags/</loc>
-    <lastmod>2019-04-09T12:05:55+08:00</lastmod>
+    <loc>http://aicesun.github.io/categories/shell/</loc>
+    <lastmod>2018-11-28T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/js/</loc>
-    <lastmod>2019-02-08T22:06:45+08:00</lastmod>
+    <loc>http://aicesun.github.io/tags/</loc>
+    <lastmod>2019-04-09T12:05:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -289,8 +282,8 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/other/</loc>
-    <lastmod>2018-11-08T01:37:56+08:00</lastmod>
+    <loc>http://aicesun.github.io/categories/js/</loc>
+    <lastmod>2019-02-08T22:06:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -303,14 +296,21 @@
   </url>
   
   <url>
-    <loc>http://aicesun.github.io/categories/%E5%9C%B0%E7%90%83%E7%89%A9%E7%90%86/</loc>
-    <lastmod>2017-08-30T01:37:56+08:00</lastmod>
+    <loc>http://aicesun.github.io/categories/other/</loc>
+    <lastmod>2018-11-08T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://aicesun.github.io/tags/%E5%9C%B0%E7%90%83%E7%89%A9%E7%90%86/</loc>
+    <lastmod>2017-08-30T01:37:56+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://aicesun.github.io/categories/%E5%9C%B0%E7%90%83%E7%89%A9%E7%90%86/</loc>
     <lastmod>2017-08-30T01:37:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
