@@ -6,10 +6,19 @@
     <description>Recent content in PYTHON on Less Is More</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 28 Nov 2018 01:37:56 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 14:41:17 +0800</lastBuildDate>
     
 	<atom:link href="http://aicesun.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Matplotlib可视化</title>
+      <link>http://aicesun.github.io/post/20190425/</link>
+      <pubDate>Thu, 25 Apr 2019 14:41:17 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/20190425/</guid>
+      <description>1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&amp;#39;once&amp;#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 #Import dataset midwest = pd.read_csv(&amp;#34;datasets/midwest_filter.csv&amp;#34;) # Prepare Data # Create</description>
+    </item>
     
     <item>
       <title>字符串处理</title>
