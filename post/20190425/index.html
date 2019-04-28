@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="aice" /><meta name="description" content="1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&amp;#39;once&amp;#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 #Import dataset midwest = pd.read_csv(&amp;#34;datasets/midwest_filter.csv&amp;#34;) # Prepare Data # Create" />
+<meta name="author" content="aice" /><meta name="description" content="1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&amp;#39;once&amp;#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 #Import dataset midwest = pd.read_csv(&amp;#34;datasets/midwest_filter.csv&amp;#34;) # Prepare Data categories = np.unique(midwest[&amp;#39;category&amp;#39;]) colors" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Matplotlib可视化" />
-<meta property="og:description" content="1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&#39;once&#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 #Import dataset midwest = pd.read_csv(&#34;datasets/midwest_filter.csv&#34;) # Prepare Data # Create" />
+<meta property="og:description" content="1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&#39;once&#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 #Import dataset midwest = pd.read_csv(&#34;datasets/midwest_filter.csv&#34;) # Prepare Data categories = np.unique(midwest[&#39;category&#39;]) colors" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://aicesun.github.io/post/20190425/" />
 <meta property="article:published_time" content="2019-04-25T14:41:17&#43;08:00"/>
 <meta property="article:modified_time" content="2019-04-25T14:41:17&#43;08:00"/>
 
 <meta itemprop="name" content="Matplotlib可视化">
-<meta itemprop="description" content="1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&#39;once&#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 #Import dataset midwest = pd.read_csv(&#34;datasets/midwest_filter.csv&#34;) # Prepare Data # Create">
+<meta itemprop="description" content="1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&#39;once&#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 #Import dataset midwest = pd.read_csv(&#34;datasets/midwest_filter.csv&#34;) # Prepare Data categories = np.unique(midwest[&#39;category&#39;]) colors">
 
 
 <meta itemprop="datePublished" content="2019-04-25T14:41:17&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-25T14:41:17&#43;08:00" />
-<meta itemprop="wordCount" content="6951">
+<meta itemprop="wordCount" content="6994">
 
 
 
 <meta itemprop="keywords" content="PYTHON," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Matplotlib可视化"/>
-<meta name="twitter:description" content="1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&#39;once&#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 #Import dataset midwest = pd.read_csv(&#34;datasets/midwest_filter.csv&#34;) # Prepare Data # Create"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 import numpy as np import pandas as pd import matplotlib as mpl import matplotlib.pyplot as plt import seaborn as sns import warnings; warnings.filterwarnings(action=&#39;once&#39;) 散点图 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 #Import dataset midwest = pd.read_csv(&#34;datasets/midwest_filter.csv&#34;) # Prepare Data categories = np.unique(midwest[&#39;category&#39;]) colors"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -169,6 +169,7 @@
 <li><a href="#有序条形图-ordered-bar-chart">有序条形图 （Ordered Bar Chart）</a></li>
 <li><a href="#棒棒糖图-lollipop-chart">棒棒糖图 （Lollipop Chart）</a></li>
 <li><a href="#包点图-dot-plot">包点图 （Dot Plot）</a></li>
+<li><a href="#坡度图-slope-chart">坡度图 （Slope Chart）</a></li>
 <li><a href="#哑铃图-dumbbell-plot">哑铃图 （Dumbbell Plot）</a></li>
 </ul></li>
 <li><a href="#分布-distribution">分布 （Distribution）</a>
@@ -177,15 +178,9 @@
 <li><a href="#类型变量的直方图-histogram-for-categorical-variable">类型变量的直方图 （Histogram for Categorical Variable）</a></li>
 <li><a href="#密度图-density-plot">密度图 （Density Plot）</a></li>
 <li><a href="#直方密度线图-density-curves-with-histogram">直方密度线图 （Density Curves with Histogram）</a></li>
-<li><a href="#joy-plot">Joy Plot</a>
-<ul>
-<li><a href="#joy-plot允许不同组的密度曲线重叠-这是一种可视化大量分组数据的彼此关系分布的好方法">Joy Plot允许不同组的密度曲线重叠，这是一种可视化大量分组数据的彼此关系分布的好方法</a></li>
-</ul></li>
+<li><a href="#joy-plot">Joy Plot</a></li>
 <li><a href="#分布式包点图-distributed-dot-plot">分布式包点图 （Distributed Dot Plot）</a></li>
-<li><a href="#箱形图-box-plot">箱形图 （Box Plot）</a>
-<ul>
-<li><a href="#箱形图是一种可视化分布的好方法-记住中位数-第25个第45个四分位数和异常值-但是-您需要注意解释可能会扭曲该组中包含的点数的框的大小-因此-手动提供每个框中的观察数量可以帮助克服这个缺点">箱形图是一种可视化分布的好方法，记住中位数、第25个第45个四分位数和异常值。 但是，您需要注意解释可能会扭曲该组中包含的点数的框的大小。 因此，手动提供每个框中的观察数量可以帮助克服这个缺点。</a></li>
-</ul></li>
+<li><a href="#箱形图-box-plot">箱形图 （Box Plot）</a></li>
 <li><a href="#包点-箱形图-dot-box-plot">包点+箱形图 （Dot + Box Plot）</a></li>
 <li><a href="#小提琴图-violin-plot">小提琴图 （Violin Plot）</a></li>
 <li><a href="#人口金字塔-population-pyramid">人口金字塔 （Population Pyramid）</a></li>
@@ -214,6 +209,7 @@
 </ul></li>
 <li><a href="#分组-groups">分组 （Groups）</a>
 <ul>
+<li><a href="#树状图-dendrogram">树状图 （Dendrogram）</a></li>
 <li><a href="#簇状图-cluster-plot">簇状图 （Cluster Plot）</a></li>
 <li><a href="#安德鲁斯曲线-andrews-curve">安德鲁斯曲线 （Andrews Curve）</a></li>
 <li><a href="#平行坐标-parallel-coordinates">平行坐标 （Parallel Coordinates）</a></li>
@@ -273,15 +269,12 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#Import dataset</span>
 <span class="n">midwest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;datasets/midwest_filter.csv&#34;</span><span class="p">)</span>
 
 <span class="c1"># Prepare Data</span>
-<span class="c1"># Create as many colors as there are unique midwest[&#39;category&#39;]</span>
 <span class="n">categories</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">midwest</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">])</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">categories</span><span class="p">))]</span>
 
@@ -294,7 +287,6 @@
                 <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
                 <span class="n">cmap</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
                 <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">category</span><span class="p">))</span>
-    <span class="c1"># &#34;c=&#34; 修改为 &#34;cmap=&#34;，Python数据之道 备注</span>
 
 <span class="c1"># Decorations</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="nb">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90000</span><span class="p">),</span>
@@ -360,9 +352,6 @@
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">patches</span>
@@ -373,7 +362,6 @@
 <span class="c1"># Step 1: Prepare Data</span>
 <span class="n">midwest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;datasets/midwest_filter.csv&#34;</span><span class="p">)</span>
 
-<span class="c1"># As many colors as there are unique midwest[&#39;category&#39;]</span>
 <span class="n">categories</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">midwest</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">])</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">tab10</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">categories</span><span class="p">))]</span>
 <span class="n">dot_size</span> <span class="o">=</span> <span class="mi">60</span>
@@ -388,10 +376,8 @@
                 <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">category</span><span class="p">),</span> 
                 <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
                 <span class="n">linewidths</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
-    <span class="c1"># &#34;c=&#34; 修改为 &#34;cmap=&#34;</span>
 
 <span class="c1"># Step 3: Encircling</span>
-<span class="c1"># https://stackoverflow.com/questions/44575681/how-do-i-encircle-different-data-sets-in-scatter-plot</span>
 <span class="k">def</span> <span class="nf">encircle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">ax</span><span class="p">:</span> <span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span>
@@ -803,6 +789,8 @@
 </div>
 <p><img src="/img/figure/output_24_1.png" width="500" aligh=center /></p>
 
+<hr />
+
 <h2 id="偏差-deviation">偏差 （Deviation）</h2>
 
 <h3 id="发散型条形图-diverging-bars">发散型条形图 （Diverging Bars）</h3>
@@ -874,6 +862,8 @@
 </span><span class="lnt">19
 </span><span class="lnt">20
 </span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Prepare Data</span>
@@ -888,8 +878,10 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">tex</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
-                 <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">})</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tex</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> 
+                 <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+                 <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> 
+                 <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">})</span>
 
 <span class="c1"># Decorations    </span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">cars</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
@@ -1006,6 +998,9 @@
 </span><span class="lnt">35
 </span><span class="lnt">36
 </span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Prepare Data</span>
@@ -1025,7 +1020,8 @@
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;Fiat X1-9&#39;</span> <span class="k">else</span> <span class="mi">300</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">cars</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mpg_z</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span> 
+            <span class="n">s</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;Fiat X1-9&#39;</span> <span class="k">else</span> <span class="mi">300</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">cars</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">cars</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
@@ -1036,8 +1032,10 @@
             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-[, widthB=2.0, lengthB=1.5&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 
 <span class="c1"># Add Patches</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">width</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span> <span class="n">width</span><span class="o">=.</span><span class="mi">8</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">width</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> 
+                       <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span> <span class="n">width</span><span class="o">=.</span><span class="mi">8</span><span class="p">,</span> 
+                       <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 
@@ -1084,6 +1082,14 @@
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Prepare Data</span>
@@ -1093,8 +1099,16 @@
 
 <span class="c1"># Plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">y_returns</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">y_returns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">y_returns</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">y_returns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">y_returns</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="mi">0</span><span class="p">,</span> 
+                 <span class="n">where</span><span class="o">=</span><span class="n">y_returns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> 
+                 <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> 
+                 <span class="n">interpolate</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">y_returns</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="mi">0</span><span class="p">,</span> 
+                 <span class="n">where</span><span class="o">=</span><span class="n">y_returns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">,</span> 
+                 <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> 
+                 <span class="n">interpolate</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="c1"># Annotate</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Peak </span><span class="se">\n</span><span class="s1">1975&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">94.0</span><span class="p">,</span> <span class="mf">21.0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">88.0</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span>
@@ -1121,6 +1135,8 @@
 </div>
 </div>
 <p><img src="/img/figure/output_35_0.png" width="500" aligh=center /></p>
+
+<hr />
 
 <h2 id="排序-ranking">排序 （Ranking）</h2>
 
@@ -1155,6 +1171,9 @@
 </span><span class="lnt">26
 </span><span class="lnt">27
 </span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Prepare Data</span>
@@ -1167,7 +1186,8 @@
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="kn">as</span> <span class="nn">patches</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">cty</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">cty</span><span class="p">,</span> 
+          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
 <span class="c1"># Annotate Text</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cty</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">cty</span><span class="p">):</span>
@@ -1180,8 +1200,10 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 
 <span class="c1"># Add patches to color the X axis labels</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="o">.</span><span class="mi">57</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.005</span><span class="p">),</span> <span class="n">width</span><span class="o">=.</span><span class="mi">33</span><span class="p">,</span> <span class="n">height</span><span class="o">=.</span><span class="mi">13</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="o">.</span><span class="mi">124</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.005</span><span class="p">),</span> <span class="n">width</span><span class="o">=.</span><span class="mi">446</span><span class="p">,</span> <span class="n">height</span><span class="o">=.</span><span class="mi">13</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="o">.</span><span class="mi">57</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.005</span><span class="p">),</span> <span class="n">width</span><span class="o">=.</span><span class="mi">33</span><span class="p">,</span> <span class="n">height</span><span class="o">=.</span><span class="mi">13</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> 
+                       <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="o">.</span><span class="mi">124</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.005</span><span class="p">),</span> <span class="n">width</span><span class="o">=.</span><span class="mi">446</span><span class="p">,</span> <span class="n">height</span><span class="o">=.</span><span class="mi">13</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">1</span><span class="p">,</span> 
+                       <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">transFigure</span><span class="p">)</span>
 <span class="c1">#fig.add_artist(p1)</span>
 <span class="c1">#fig.add_artist(p2)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></td></tr></table>
@@ -1217,6 +1239,11 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Prepare Data</span>
@@ -1227,15 +1254,20 @@
 
 <span class="c1"># Draw plot</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">cty</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">cty</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">cty</span><span class="p">,</span> 
+          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">cty</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> 
+           <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="c1"># Title, Label, Ticks and Ylim</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Lollipop Chart for Highway Mileage&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">14</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Lollipop Chart for Highway Mileage&#39;</span><span class="p">,</span> 
+             <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">14</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Miles Per Gallon&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;horizontalalignment&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> 
+                   <span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> 
+                   <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;horizontalalignment&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="c1"># Annotate</span>
@@ -1269,6 +1301,7 @@
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Prepare Data</span>
@@ -1286,20 +1319,16 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Dot Plot for Highway Mileage&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">18</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Miles Per Gallon&#39;</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;horizontalalignment&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> 
+                   <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;horizontalalignment&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></td></tr></table>
 </div>
 </div>
 <p><img src="/img/figure/output_42_0.png" width="500" aligh=center /></p>
+
+<h3 id="坡度图-slope-chart">坡度图 （Slope Chart）</h3>
 <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">### 坡度图 （Slope Chart）</span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1350,6 +1379,20 @@
 </span><span class="lnt">47
 </span><span class="lnt">48
 </span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.lines</span> <span class="kn">as</span> <span class="nn">mlines</span>
@@ -1364,25 +1407,39 @@
 <span class="c1"># https://stackoverflow.com/questions/36470343/how-to-draw-a-line-with-matplotlib/36479941</span>
 <span class="k">def</span> <span class="nf">newline</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-    <span class="n">l</span> <span class="o">=</span> <span class="n">mlines</span><span class="o">.</span><span class="n">Line2D</span><span class="p">([</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">mlines</span><span class="o">.</span><span class="n">Line2D</span><span class="p">([</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+                      <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span> <span class="k">if</span> <span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> 
+                      <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> 
+                      <span class="n">markersize</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">add_line</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">l</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
 
 <span class="c1"># Vertical Lines</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">13000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">13000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">13000</span><span class="p">,</span> 
+          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+          <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+          <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">13000</span><span class="p">,</span> 
+          <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> 
+          <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
 
 <span class="c1"># Points</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;1952&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;1957&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;1952&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> 
+           <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;1957&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> 
+           <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="c1"># Line Segmentsand Annotation</span>
 <span class="k">for</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;1952&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;1957&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]):</span>
     <span class="n">newline</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="n">p1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="n">p2</span><span class="p">])</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p1</span><span class="p">)),</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">14</span><span class="p">})</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p2</span><span class="p">)),</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">14</span><span class="p">})</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p1</span><span class="p">)),</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> 
+            <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">14</span><span class="p">})</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">p2</span><span class="p">)),</span> 
+            <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> 
+            <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> 
+            <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">14</span><span class="p">})</span>
 
 <span class="c1"># &#39;Before&#39; and &#39;After&#39; Annotations</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mi">13000</span><span class="p">,</span> <span class="s1">&#39;BEFORE&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span><span class="mi">700</span><span class="p">})</span>
@@ -1447,6 +1504,10 @@
 </span><span class="lnt">37
 </span><span class="lnt">38
 </span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.lines</span> <span class="kn">as</span> <span class="nn">mlines</span>
@@ -1467,10 +1528,14 @@
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#f7f7f7&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
 
 <span class="c1"># Vertical Lines</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mo">05</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mi">10</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mi">15</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mi">20</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mo">05</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+          <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mi">10</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+          <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mi">15</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+          <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x</span><span class="o">=.</span><span class="mi">20</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> 
+          <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">)</span>
 
 <span class="c1"># Points</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;pct_2013&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#0e668b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
@@ -1491,6 +1556,8 @@
 </div>
 </div>
 <p><img src="/img/figure/output_46_0.png" width="500" aligh=center /></p>
+
+<hr />
 
 <h2 id="分布-distribution">分布 （Distribution）</h2>
 
@@ -1621,6 +1688,10 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import Data</span>
@@ -1628,10 +1699,14 @@
 
 <span class="c1"># Draw Plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;g&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cyl=4&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;deeppink&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cyl=5&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;dodgerblue&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cyl=6&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;orange&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cyl=8&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;g&#34;</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cyl=4&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;deeppink&#34;</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cyl=5&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;dodgerblue&#34;</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cyl=6&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;cyl&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> <span class="n">shade</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&#34;orange&#34;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Cyl=8&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
 
 <span class="c1"># Decoration</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Density Plot of City Mileage by n_Cylinders&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
@@ -1661,6 +1736,9 @@
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import Data</span>
@@ -1669,11 +1747,14 @@
 <span class="c1"># Draw Plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;compact&#39;</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> 
-             <span class="n">color</span><span class="o">=</span><span class="s2">&#34;dodgerblue&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Compact&#34;</span><span class="p">,</span> <span class="n">hist_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="o">.</span><span class="mi">7</span><span class="p">},</span> <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
+             <span class="n">color</span><span class="o">=</span><span class="s2">&#34;dodgerblue&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Compact&#34;</span><span class="p">,</span> <span class="n">hist_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="o">.</span><span class="mi">7</span><span class="p">},</span> 
+             <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;suv&#39;</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> 
-             <span class="n">color</span><span class="o">=</span><span class="s2">&#34;orange&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;SUV&#34;</span><span class="p">,</span> <span class="n">hist_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="o">.</span><span class="mi">7</span><span class="p">},</span> <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
+             <span class="n">color</span><span class="o">=</span><span class="s2">&#34;orange&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;SUV&#34;</span><span class="p">,</span> <span class="n">hist_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="o">.</span><span class="mi">7</span><span class="p">},</span> 
+             <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;minivan&#39;</span><span class="p">,</span> <span class="s2">&#34;cty&#34;</span><span class="p">],</span> 
-             <span class="n">color</span><span class="o">=</span><span class="s2">&#34;g&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;minivan&#34;</span><span class="p">,</span> <span class="n">hist_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="o">.</span><span class="mi">7</span><span class="p">},</span> <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
+             <span class="n">color</span><span class="o">=</span><span class="s2">&#34;g&#34;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;minivan&#34;</span><span class="p">,</span> <span class="n">hist_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span><span class="o">.</span><span class="mi">7</span><span class="p">},</span> 
+             <span class="n">kde_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;linewidth&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">)</span>
 
 <span class="c1"># Decoration</span>
@@ -1686,7 +1767,7 @@
 
 <h3 id="joy-plot">Joy Plot</h3>
 
-<h4 id="joy-plot允许不同组的密度曲线重叠-这是一种可视化大量分组数据的彼此关系分布的好方法">Joy Plot允许不同组的密度曲线重叠，这是一种可视化大量分组数据的彼此关系分布的好方法</h4>
+<p>Joy Plot允许不同组的密度曲线重叠，这是一种可视化大量分组数据的彼此关系分布的好方法</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
@@ -1763,6 +1844,15 @@
 </span><span class="lnt">39
 </span><span class="lnt">40
 </span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="kn">as</span> <span class="nn">mpatches</span>
@@ -1785,19 +1875,28 @@
 <span class="c1"># Draw the Dots</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">make</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">manufacturer</span><span class="p">):</span>
     <span class="n">df_make</span> <span class="o">=</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_raw</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">==</span><span class="n">make</span><span class="p">,</span> <span class="p">:]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">df_make</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;cty&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_make</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;cty&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_median</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_median</span><span class="o">.</span><span class="n">index</span><span class="o">==</span><span class="n">make</span><span class="p">,</span> <span class="p">:],</span> <span class="n">s</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">df_make</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;cty&#39;</span><span class="p">,</span> 
+               <span class="n">data</span><span class="o">=</span><span class="n">df_make</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span>
+               <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> 
+               <span class="n">c</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> 
+               <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;cty&#39;</span><span class="p">,</span> 
+               <span class="n">data</span><span class="o">=</span><span class="n">df_median</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_median</span><span class="o">.</span><span class="n">index</span><span class="o">==</span><span class="n">make</span><span class="p">,</span> <span class="p">:],</span> 
+               <span class="n">s</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">)</span>
 
 <span class="c1"># Annotate    </span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&#34;$red \; dots \; are \; the \: median$&#34;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&#34;$red \; dots \; are \; the \: median$&#34;</span><span class="p">,</span> 
+        <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">)</span>
 
 <span class="c1"># Decorations</span>
-<span class="n">red_patch</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([],[],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&#34;o&#34;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">mec</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Median&#34;</span><span class="p">)</span>
+<span class="n">red_patch</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([],[],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&#34;o&#34;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> 
+                     <span class="n">mec</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;firebrick&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&#34;Median&#34;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">red_patch</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution of City Mileage by Make&#39;</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">18</span><span class="p">})</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Miles Per Gallon (City)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;horizontalalignment&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">},</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">manufacturer</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">title</span><span class="p">(),</span> 
+                   <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;horizontalalignment&#39;</span><span class="p">:</span> <span class="s1">&#39;right&#39;</span><span class="p">},</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&#34;top&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>    
@@ -1812,7 +1911,7 @@
 
 <h3 id="箱形图-box-plot">箱形图 （Box Plot）</h3>
 
-<h4 id="箱形图是一种可视化分布的好方法-记住中位数-第25个第45个四分位数和异常值-但是-您需要注意解释可能会扭曲该组中包含的点数的框的大小-因此-手动提供每个框中的观察数量可以帮助克服这个缺点">箱形图是一种可视化分布的好方法，记住中位数、第25个第45个四分位数和异常值。 但是，您需要注意解释可能会扭曲该组中包含的点数的框的大小。 因此，手动提供每个框中的观察数量可以帮助克服这个缺点。</h4>
+<p>箱形图是一种可视化分布的好方法，记住中位数、第25个第45个四分位数和异常值。 但是，您需要注意解释可能会扭曲该组中包含的点数的框的大小。 因此，手动提供每个框中的观察数量可以帮助克服这个缺点。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
@@ -2037,6 +2136,8 @@
 </div>
 </div>
 <p><img src="/img/figure/output_72_1.png" width="500" aligh=center /></p>
+
+<hr />
 
 <h2 id="组成-composition">组成 （Composition）</h2>
 
@@ -2292,8 +2393,8 @@
                                   <span class="n">autopct</span><span class="o">=</span><span class="k">lambda</span> <span class="n">pct</span><span class="p">:</span> <span class="n">func</span><span class="p">(</span><span class="n">pct</span><span class="p">,</span> <span class="n">data</span><span class="p">),</span>
                                   <span class="n">textprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&#34;w&#34;</span><span class="p">),</span>
                                   <span class="n">colors</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Dark2</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span>
-                                 <span class="n">startangle</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span>
-                                 <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">)</span>
+                                  <span class="n">startangle</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span>
+                                  <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">)</span>
 
 <span class="c1"># Decoration</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">wedges</span><span class="p">,</span> <span class="n">categories</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Vehicle Class&#34;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&#34;center left&#34;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -2379,6 +2480,11 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
@@ -2397,11 +2503,16 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;manufacturer&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;counts&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">width</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;counts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> 
+             <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> 
+             <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> 
              <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fontweight&#39;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">})</span>
 
 <span class="c1"># Decoration</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;manufacturer&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;manufacturer&#39;</span><span class="p">],</span> 
+                          <span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> 
+                          <span class="n">horizontalalignment</span><span class="o">=</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span>
+                          <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Number of Vehicles by Manaufacturers&#34;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;# Vehicles&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
@@ -2409,6 +2520,8 @@
 </div>
 </div>
 <p><img src="/img/figure/output_83_0.png" width="500" aligh=center /></p>
+
+<hr />
 
 <h2 id="变化-change">变化 （Change）</h2>
 
@@ -2439,6 +2552,9 @@
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import Data</span>
@@ -2452,8 +2568,11 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">750</span><span class="p">)</span>
 <span class="n">xtick_location</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()[::</span><span class="mi">12</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">xtick_location</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1949</span><span class="p">,</span> <span class="mi">1969</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
-           <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">xtick_location</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1949</span><span class="p">,</span> <span class="mi">1969</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> 
+           <span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> 
+           <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
+           <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> 
+           <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">7</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Air Passengers Traffic (1949 - 1969)&#34;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
@@ -2515,6 +2634,18 @@
 </span><span class="lnt">41
 </span><span class="lnt">42
 </span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import Data</span>
@@ -2530,18 +2661,30 @@
 
 <span class="c1"># Draw Plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Air Traffic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Air Traffic&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">peak_locations</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">peak_locations</span><span class="p">],</span> 
-            <span class="n">marker</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">markers</span><span class="o">.</span><span class="n">CARETUPBASE</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:green&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Peaks&#39;</span><span class="p">)</span>
+            <span class="n">marker</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">markers</span><span class="o">.</span><span class="n">CARETUPBASE</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:green&#39;</span><span class="p">,</span> 
+            <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Peaks&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">trough_locations</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">trough_locations</span><span class="p">],</span> 
-            <span class="n">marker</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">markers</span><span class="o">.</span><span class="n">CARETDOWNBASE</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Troughs&#39;</span><span class="p">)</span>
+            <span class="n">marker</span><span class="o">=</span><span class="n">mpl</span><span class="o">.</span><span class="n">markers</span><span class="o">.</span><span class="n">CARETDOWNBASE</span><span class="p">,</span> 
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> 
+            <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Troughs&#39;</span><span class="p">)</span>
 
 <span class="c1"># Annotate</span>
 <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">trough_locations</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">5</span><span class="p">],</span> <span class="n">peak_locations</span><span class="p">[::</span><span class="mi">3</span><span class="p">]):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkgreen&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="mi">35</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkred&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">+</span><span class="mi">15</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> 
+             <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> 
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkgreen&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">value</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">-</span><span class="mi">35</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> 
+             <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkred&#39;</span><span class="p">)</span>
 
 <span class="c1"># Decoration</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">750</span><span class="p">)</span>
@@ -3160,6 +3303,14 @@
 </span><span class="lnt">31
 </span><span class="lnt">32
 </span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import Data</span>
@@ -3174,8 +3325,16 @@
 
 <span class="c1"># Draw Plot</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">mycolors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">y2</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">mycolors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                <span class="n">label</span><span class="o">=</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+                <span class="n">color</span><span class="o">=</span><span class="n">mycolors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> 
+                <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">y2</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                <span class="n">label</span><span class="o">=</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="n">mycolors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># Decorations</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Personal Savings Rate vs Median Duration of Unemployment&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
@@ -3215,6 +3374,7 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="kn">as</span> <span class="nn">mpl</span>
@@ -3226,7 +3386,8 @@
 
 <span class="c1"># Plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">calmap</span><span class="o">.</span><span class="n">calendarplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;2014&#39;</span><span class="p">][</span><span class="s1">&#39;VIX.Close&#39;</span><span class="p">],</span> <span class="n">fig_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">)},</span> 
+<span class="n">calmap</span><span class="o">.</span><span class="n">calendarplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;2014&#39;</span><span class="p">][</span><span class="s1">&#39;VIX.Close&#39;</span><span class="p">],</span> 
+                    <span class="n">fig_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;figsize&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">14</span><span class="p">)},</span> 
                     <span class="n">yearlabel_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;fontsize&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">},</span> 
                     <span class="n">subplot_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span><span class="s1">&#39;Yahoo Stock Prices&#39;</span><span class="p">})</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></code></pre></td></tr></table>
@@ -3317,15 +3478,12 @@
 </div>
 <p><img src="/img/figure/output_111_0.png" width="500" aligh=center /></p>
 
+<hr />
+
 <h2 id="分组-groups">分组 （Groups）</h2>
+
+<h3 id="树状图-dendrogram">树状图 （Dendrogram）</h3>
 <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">### 树状图 （Dendrogram）</span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -3341,6 +3499,7 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="kn">as</span> <span class="nn">shc</span>
@@ -3351,7 +3510,8 @@
 <span class="c1"># Plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">80</span><span class="p">)</span>  
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;USArrests Dendograms&#34;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>  
-<span class="n">dend</span> <span class="o">=</span> <span class="n">shc</span><span class="o">.</span><span class="n">dendrogram</span><span class="p">(</span><span class="n">shc</span><span class="o">.</span><span class="n">linkage</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Murder&#39;</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">,</span> <span class="s1">&#39;UrbanPop&#39;</span><span class="p">,</span> <span class="s1">&#39;Rape&#39;</span><span class="p">]],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ward&#39;</span><span class="p">),</span> 
+<span class="n">dend</span> <span class="o">=</span> <span class="n">shc</span><span class="o">.</span><span class="n">dendrogram</span><span class="p">(</span><span class="n">shc</span><span class="o">.</span><span class="n">linkage</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Murder&#39;</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">,</span> <span class="s1">&#39;UrbanPop&#39;</span><span class="p">,</span> <span class="s1">&#39;Rape&#39;</span><span class="p">]],</span> 
+                                  <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ward&#39;</span><span class="p">),</span> 
                       <span class="n">labels</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
                       <span class="n">color_threshold</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
@@ -3401,6 +3561,31 @@
 </span><span class="lnt">35
 </span><span class="lnt">36
 </span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
@@ -3427,11 +3612,36 @@
     <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">poly</span><span class="p">)</span>
 
 <span class="c1"># Draw polygon surrounding vertices    </span>
-<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;gold&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;tab:blue&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;tab:red&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;tab:green&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;tab:orange&#34;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span> 
+         <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span>
+         <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> 
+         <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;gold&#34;</span><span class="p">,</span>
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span>
+         <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> 
+         <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> 
+         <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;tab:blue&#34;</span><span class="p">,</span> 
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span> 
+         <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> 
+         <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span>
+         <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;tab:red&#34;</span><span class="p">,</span> 
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span>
+         <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> 
+         <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> 
+         <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;tab:green&#34;</span><span class="p">,</span> 
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">encircle</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Murder&#39;</span><span class="p">],</span> 
+         <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cluster</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">],</span> 
+         <span class="n">ec</span><span class="o">=</span><span class="s2">&#34;k&#34;</span><span class="p">,</span> 
+         <span class="n">fc</span><span class="o">=</span><span class="s2">&#34;tab:orange&#34;</span><span class="p">,</span> 
+         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> 
+         <span class="n">linewidth</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Decorations</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Murder&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">);</span> 
@@ -3568,9 +3778,13 @@
           <a href="/tags/python/">PYTHON</a>
           </div>
       <nav class="post-nav">
-        
-        <a class="next" href="/post/2019042401/">
-            <span class="next-text nav-default">一些想法</span>
+        <a class="prev" href="/post/20190428/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">EXSIM设置</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/gmt_psscale/">
+            <span class="next-text nav-default">GMT_psscale</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

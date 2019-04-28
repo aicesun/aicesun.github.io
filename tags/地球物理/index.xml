@@ -6,10 +6,19 @@
     <description>Recent content in 地球物理 on Less Is More</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 21 Sep 2017 01:37:56 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 17:09:16 +0800</lastBuildDate>
     
 	<atom:link href="http://aicesun.github.io/tags/%E5%9C%B0%E7%90%83%E7%89%A9%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>EXSIM设置</title>
+      <link>http://aicesun.github.io/post/20190428/</link>
+      <pubDate>Sun, 28 Apr 2019 17:09:16 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/20190428/</guid>
+      <description>Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T&amp;reg; = T{_0} + dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be a</description>
+    </item>
     
     <item>
       <title>关于exsim的一些问题</title>
