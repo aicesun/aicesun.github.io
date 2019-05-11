@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="aice" /><meta name="description" content="Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T&amp;reg; = T{_0} &#43; dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be a" />
+<meta name="author" content="aice" /><meta name="description" content="Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T({R} ) = T{_0} &#43; dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="EXSIM设置" />
-<meta property="og:description" content="Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T&reg; = T{_0} &#43; dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be a" />
+<meta property="og:description" content="Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T({R} ) = T{_0} &#43; dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://aicesun.github.io/post/20190428/" />
 <meta property="article:published_time" content="2019-04-28T17:09:16&#43;08:00"/>
 <meta property="article:modified_time" content="2019-04-28T17:09:16&#43;08:00"/>
 
 <meta itemprop="name" content="EXSIM设置">
-<meta itemprop="description" content="Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T&reg; = T{_0} &#43; dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be a">
+<meta itemprop="description" content="Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T({R} ) = T{_0} &#43; dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be">
 
 
 <meta itemprop="datePublished" content="2019-04-28T17:09:16&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-28T17:09:16&#43;08:00" />
-<meta itemprop="wordCount" content="933">
+<meta itemprop="wordCount" content="953">
 
 
 
 <meta itemprop="keywords" content="地球物理," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="EXSIM设置"/>
-<meta name="twitter:description" content="Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T&reg; = T{_0} &#43; dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be a"/>
+<meta name="twitter:description" content="Path Duration the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995) $T({R} ) = T{_0} &#43; dR ​$ where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -149,7 +149,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#参数文件中设置为">参数文件中设置为</a></li>
+<li><a href="#参数文件中设置为">参数文件中设置为:</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#geometric-spreading">Geometric spreading</a></li>
@@ -176,7 +176,7 @@
 
 <p>the duration of an EQ signal at hypo-central distance can generally be represented as (according Atkinson and Boore 1995)</p>
 
-<p>$T&reg; = T{_0} + dR ​$</p>
+<p>$T({R} ) = T{_0} + dR ​$</p>
 
 <p>where $T{_0}​$ is the source duration, and $d​$ is the coefficient controlling the increase of duration with distance; $d​$ is derived empirically. $d​$ may be a single coefficient describing all distances of interest (e.g., Atkinson, 1993b), or it can take different values <strong>depending on the distance range</strong>(e.g., Atkinson and Boore, 1995). <strong>The empirical duration model of Atkinson and Boore (1995) was adopted for this study</strong>. The duration increases in a hinged quad linear fashion from the source, mimicking the form of the attenuation model.</p>
 
@@ -216,20 +216,36 @@
 </tbody>
 </table>
 
-<p>$T&reg; = T{_0} + dR  = \left{
-\begin{aligned}   dur(1)(R-0) &amp;&amp;  0 \le R &lt; 10 \    dur(2)(R-10) &amp;&amp; 10 &lt; R \le 70 \ dur(3) +   x(1)(R-70) &amp;&amp; 70 &lt; R \le 130 \ dur(4)  +  x(2)(R-130) &amp;&amp; 130&lt;R
-\end{aligned}
-\right.$</p>
+<hr />
 
-<p>$=\left{
-\begin{aligned}
-0 &amp;&amp;  0 \le R &lt; 10 \  0.16(R-10) &amp;&amp; 10 &lt; R \le 70 \ 9.6-0.03(R-70) &amp;&amp; 70 &lt; R \le 130 \ 7.8+0.04(R-130) &amp;&amp; 130&lt;R
-\end{aligned}
-\right.$</p>
+<p>$$
+\mathbf{T({R})} = T{_0} + dR =
+\begin{equation}
+\left{
+      \begin{array}{lr}
+      dur(1)(R-0) &amp;&amp;  0 \leq R &lt; 10 \
+      dur(2)(R-10) &amp;&amp; 10 &lt; R \le 70 <br />
+      dur(3)+x(1)(R-70) &amp;&amp; 70 &lt; R \le 130 \
+      dur(4)+x(2)(R-130) &amp;&amp; 130
+      \end{array}
+\right.
+\   \qquad \qquad \qquad=
+\left{
+      \begin{array}{lr}
+      0  &amp;&amp;  0 \le R &lt; 10 \
+      0.16(R-10) &amp;&amp; 10 &lt; R \le 70 <br />
+      9.6-0.03(R-70) &amp;&amp; 70 &lt; R \le 130 \
+      7.8+0.04(R-130) &amp;&amp; 130
+      \end{array}
+\right.
+\end{equation}
+$$</p>
 
-<p>$x(1) = \frac{9.6-0}{70-10} = 0.16$                          $x(2) = \frac{7.8-9.6}{130-70} = -0.03$</p>
+<p>$x(1) = \frac{9.6-0}{70-10} = 0.16​$</p>
 
-<h5 id="参数文件中设置为">参数文件中设置为</h5>
+<p>$x(2) = \frac{7.8-9.6}{130-70} = -0.03​$</p>
+
+<h5 id="参数文件中设置为">参数文件中设置为:</h5>
 
 <table>
 <thead>
@@ -309,15 +325,20 @@
 
 <p>几何扩散一般选用Atkinson和Boore建立的北美东部三段式模型。假设地壳厚度为50km，从震源辐射出的剪切波为球面波，控制着地壳厚度1.4倍（70km）范围内地表的地震动，地震动的傅里叶谱以$1/R$衰减，70km以外，震源辐射的剪切波与从*moho*面反射的波叠加。在70千米和130千米之间，波的叠加抵消了地震波强度的衰减,几何扩散函数成了一个常数。在130千米之外,地表的地震动受*Lg*波的控制,地震波以柱面波传播,地震动的振幅以$1/\sqrt&reg;$衰减。</p>
 
-<p><img src="/img/GS0.png" width="500" aligh=center /></p>
-
-<p>$GS&reg; =\left{
-\begin{aligned}
-R^{-1} &amp;&amp;  ref \le R &lt; 70 \  <sup>1</sup>&frasl;<sub>70</sub>  &amp;&amp; 70 \le R &lt; 130 \ <sup>1</sup>&frasl;<sub>70</sub>(130/R){^{0.5}}=0.16R^{-0.5} &amp;&amp;  R \ge 130
-\end{aligned}
-\right.$</p>
-
-<p>为了避免$R$取到0时，$1/R$无意义，故设置$R_{ref}=1$。</p>
+<p><img src="/img/GS0.png" width="500" aligh=center />
+$$
+\begin{equation}
+GS({R}) =
+\left{
+      \begin{array}{lr}
+      R^{-1} &amp;&amp;  ref \le R &lt; 70 \<br />
+      <sup>1</sup>&frasl;<sub>70</sub>  &amp;&amp; 70 \le R &lt; 130 \
+      <sup>1</sup>&frasl;<sub>70</sub>(130/R){^{0.5}}=0.16R^{-0.5} &amp;&amp;  R \ge 130
+      \end{array}
+\right.
+\end{equation}
+$$
+为了避免$R​$取到0时，$1/R​$无意义，故设置$R_{ref}=1​$。</p>
 
 <table>
 <thead>
@@ -455,7 +476,7 @@ R^{-1} &amp;&amp;  ref \le R &lt; 70 \  <sup>1</sup>&frasl;<sub>70</sub>  &amp;&
 
 <h2 id="empirical-filter">Empirical filter</h2>
 
-<p>**经验滤波是为了调整震源谱以改变生成的PGA和PSA而设置的，初衷是为了和其他方法计算出的结果匹配来进行比较，实际使用中最好设置为0. ** (<code>Atkinson. G., K. Goda and K. Assatourians (2011). Comparison of nonlinear structural responses for accelerograms simulated from the stochastic finite-fault approach versus the hybrid broadband approach. Bull. Seism. Soc. Am.,101, 2967-2980</code>)</p>
+<p>经验滤波是为了调整震源谱以改变生成的PGA和PSA而设置的，初衷是为了和其他方法计算出的结果匹配来进行比较，实际使用中最好设置为0. (<code>Atkinson. G., K. Goda and K. Assatourians (2011). Comparison of nonlinear structural responses for accelerograms simulated from the stochastic finite-fault approach versus the hybrid broadband approach. Bull. Seism. Soc. Am.,101, 2967-2980</code>)</p>
 
 <table>
 <thead>
@@ -578,6 +599,7 @@ R^{-1} &amp;&amp;  ref \le R &lt; 70 \  <sup>1</sup>&frasl;<sub>70</sub>  &amp;&
 <script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
   <script type="text/javascript">
     window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
       showProcessingMessages: false,
       messageStyle: 'none'
     };
