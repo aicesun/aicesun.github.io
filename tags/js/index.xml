@@ -17,7 +17,7 @@
       <pubDate>Fri, 08 Feb 2019 22:06:45 +0800</pubDate>
       
       <guid>http://aicesun.github.io/post/jsppt/</guid>
-      <description></description>
+      <description>var bmapChart=echarts.init(document.getElementById(&#34;map-wrap&#34;));var data=[{name:&#34;上海&#34;,value:299},{name:&#34;厦门&#34;,value:245},{name:&#34;丰城&#34;,value:1</description>
     </item>
     
   </channel>

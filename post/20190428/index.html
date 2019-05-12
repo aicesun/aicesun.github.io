@@ -51,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2019-04-28T17:09:16&#43;08:00" />
 <meta itemprop="dateModified" content="2019-04-28T17:09:16&#43;08:00" />
-<meta itemprop="wordCount" content="953">
+<meta itemprop="wordCount" content="937">
 
 
 
@@ -218,32 +218,23 @@
 
 <hr />
 
-<p>$$
-\mathbf{T({R})} = T{_0} + dR =
-\begin{equation}
-\left{
-      \begin{array}{lr}
-      dur(1)(R-0) &amp;&amp;  0 \leq R &lt; 10 \
-      dur(2)(R-10) &amp;&amp; 10 &lt; R \le 70 <br />
-      dur(3)+x(1)(R-70) &amp;&amp; 70 &lt; R \le 130 \
-      dur(4)+x(2)(R-130) &amp;&amp; 130
-      \end{array}
-\right.
-\   \qquad \qquad \qquad=
-\left{
-      \begin{array}{lr}
-      0  &amp;&amp;  0 \le R &lt; 10 \
-      0.16(R-10) &amp;&amp; 10 &lt; R \le 70 <br />
-      9.6-0.03(R-70) &amp;&amp; 70 &lt; R \le 130 \
-      7.8+0.04(R-130) &amp;&amp; 130
-      \end{array}
-\right.
-\end{equation}
-$$</p>
+<p>$T({R}) = T{_0} + dR = $
+\begin{cases}
+dur(1)(R-0), &amp; 0 \leq R &lt; 10 \\<br />
+dur(2)(R-10), &amp; 10 &lt; R \le 70 \\<br />
+dur(3)+x(1)(R-70), &amp; 70 &lt; R \le 130 \\<br />
+dur(4)+x(2)(R-130), &amp; R &gt; 130<br />
+\end{cases}
+$=$
+\begin{cases}
+0,               &amp; 0 \le R &lt; 10 \\
+0.16(R-10),      &amp; 10 &lt; R \le 70 \\<br />
+9.6-0.03(R-70),  &amp; 70 &lt; R \le 130 \\
+7.8+0.04(R-130), &amp; R &gt; 130<br />
+\end{cases}</p>
 
-<p>$x(1) = \frac{9.6-0}{70-10} = 0.16​$</p>
-
-<p>$x(2) = \frac{7.8-9.6}{130-70} = -0.03​$</p>
+<p>$x(1) = \frac{9.6-0}{70-10} = 0.16​$<br />
+$x(2) = \frac{7.8-9.6}{130-70} = -0.03​$</p>
 
 <h5 id="参数文件中设置为">参数文件中设置为:</h5>
 
@@ -325,20 +316,16 @@ $$</p>
 
 <p>几何扩散一般选用Atkinson和Boore建立的北美东部三段式模型。假设地壳厚度为50km，从震源辐射出的剪切波为球面波，控制着地壳厚度1.4倍（70km）范围内地表的地震动，地震动的傅里叶谱以$1/R$衰减，70km以外，震源辐射的剪切波与从*moho*面反射的波叠加。在70千米和130千米之间，波的叠加抵消了地震波强度的衰减,几何扩散函数成了一个常数。在130千米之外,地表的地震动受*Lg*波的控制,地震波以柱面波传播,地震动的振幅以$1/\sqrt&reg;$衰减。</p>
 
-<p><img src="/img/GS0.png" width="500" aligh=center />
-$$
-\begin{equation}
-GS({R}) =
-\left{
-      \begin{array}{lr}
-      R^{-1} &amp;&amp;  ref \le R &lt; 70 \<br />
-      <sup>1</sup>&frasl;<sub>70</sub>  &amp;&amp; 70 \le R &lt; 130 \
-      <sup>1</sup>&frasl;<sub>70</sub>(130/R){^{0.5}}=0.16R^{-0.5} &amp;&amp;  R \ge 130
-      \end{array}
-\right.
-\end{equation}
-$$
-为了避免$R​$取到0时，$1/R​$无意义，故设置$R_{ref}=1​$。</p>
+<p><img src="/img/GS0.png" width="500" aligh=center /></p>
+
+<p>$GS({R})$=
+\begin{cases}<br />
+R^{-1},&amp;ref \le R &lt; 70 \\
+70^{-1}, &amp;70 \le R &lt; 130\\<br />
+0.16R^{-0.5}, &amp;R \ge 130<br />
+\end{cases}</p>
+
+<p>为了避免$R​$取到0时，$1/R​$无意义，故设置$R_{ref}=1​$。</p>
 
 <table>
 <thead>
