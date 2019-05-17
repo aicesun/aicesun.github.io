@@ -53,7 +53,8 @@
       <pubDate>Fri, 08 Feb 2019 22:06:45 +0800</pubDate>
       
       <guid>http://aicesun.github.io/post/jsppt/</guid>
-      <description>var bmapChart=echarts.init(document.getElementById(&#34;map-wrap&#34;));var data=[{name:&#34;上海&#34;,value:299},{name:&#34;厦门&#34;,value:245},{name:&#34;丰城&#34;,value:1</description>
+      <description>New Document  
+ * { margin: 0px; padding: 0px; } li { list-style: none; } img { border: 0; } a { text-decoration: none; } #slide { width: 800px; height: 400px; box-shadow: 0px 0px 5px #c1c1c1; margin: 20px auto; position: relative; overflow: hidden; } #slide ul { position: absolute; left: 0px; top: 0px; height: 400px; width: 11930px; } #slide ul li { width: 800px; height: 400px; overflow: hidden; float: left; } #slide .</description>
     </item>
     
     <item>
