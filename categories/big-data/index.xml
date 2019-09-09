@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Big DATA on AICE&#39;s LAB</title>
+    <link>http://aicesun.github.io/categories/big-data/</link>
+    <description>Recent content in Big DATA on AICE&#39;s LAB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 09 Sep 2019 13:39:21 +0800</lastBuildDate>
+    
+	<atom:link href="http://aicesun.github.io/categories/big-data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>决策树</title>
+      <link>http://aicesun.github.io/post/dntree/</link>
+      <pubDate>Mon, 09 Sep 2019 13:39:21 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/dntree/</guid>
+      <description>1.定义 决策树分为分类树和回归树两种，分类树对离散变量做决策树，回归树对连续变量做决策树。 在分类问题中，表示基于特征对实例进行分类的过程。分</description>
+    </item>
+    
+  </channel>
+</rss>

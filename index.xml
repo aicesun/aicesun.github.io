@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>决策树</title>
+      <link>http://aicesun.github.io/post/dntree/</link>
+      <pubDate>Mon, 09 Sep 2019 13:39:21 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/dntree/</guid>
+      <description>1.定义 决策树分为分类树和回归树两种，分类树对离散变量做决策树，回归树对连续变量做决策树。 在分类问题中，表示基于特征对实例进行分类的过程。分</description>
+    </item>
+    
+    <item>
       <title>EXSIM设置</title>
       <link>http://aicesun.github.io/post/20190428/</link>
       <pubDate>Sun, 28 Apr 2019 17:09:16 +0800</pubDate>
