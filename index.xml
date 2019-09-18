@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Linux 系统启动过程</title>
+      <link>http://aicesun.github.io/post/linuxboot/</link>
+      <pubDate>Wed, 18 Sep 2019 13:10:49 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/linuxboot/</guid>
+      <description>Linux 系统启动过程 1.BIOS 上电自检（POST） 上电自检，由硬件的部分来完成，当电脑接通电源，电脑开始执行 BIOS的 POST过程，以确认硬件的基本功能是</description>
+    </item>
+    
+    <item>
       <title>排序算法</title>
       <link>http://aicesun.github.io/post/sort/</link>
       <pubDate>Tue, 10 Sep 2019 13:50:18 +0800</pubDate>
@@ -235,15 +244,6 @@
       
       <guid>http://aicesun.github.io/post/skill/</guid>
       <description>Admit your mistakes and try to fix them head on. If you are ever in a heated situation, avoid the use of the word &amp;lsquo;you!&amp;rsquo;. It is accusatory and will not help. Instead say &amp;lsquo;I feel&amp;hellip;&amp;rsquo; and go from there. Go to your managers with solutions, instead of problems. Make their job easier, learn how they work, and then ride their coattails up the ladder. Your attitude is everything. Never, ever, ever gossip if you can help it.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://aicesun.github.io/img/sort/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://aicesun.github.io/img/sort/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/</guid>
-      <description></description>
     </item>
     
   </channel>

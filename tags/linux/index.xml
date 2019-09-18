@@ -6,10 +6,19 @@
     <description>Recent content in LINUX on AICE&#39;s LAB</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 26 Jun 2015 01:37:56 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Sep 2019 13:10:49 +0800</lastBuildDate>
     
 	<atom:link href="http://aicesun.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux 系统启动过程</title>
+      <link>http://aicesun.github.io/post/linuxboot/</link>
+      <pubDate>Wed, 18 Sep 2019 13:10:49 +0800</pubDate>
+      
+      <guid>http://aicesun.github.io/post/linuxboot/</guid>
+      <description>Linux 系统启动过程 1.BIOS 上电自检（POST） 上电自检，由硬件的部分来完成，当电脑接通电源，电脑开始执行 BIOS的 POST过程，以确认硬件的基本功能是</description>
+    </item>
     
     <item>
       <title>双系统安装centos</title>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux 系统启动过程 - AICE&#39;s LAB</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="aice" /><meta name="description" content="Linux 系统启动过程 1.BIOS 上电自检（POST） 上电自检，由硬件的部分来完成，当电脑接通电源，电脑开始执行 BIOS的 POST过程，以确认硬件的基本功能是" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0 with theme even" />
+
+
+<link rel="canonical" href="http://aicesun.github.io/post/linuxboot/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Linux 系统启动过程" />
+<meta property="og:description" content="Linux 系统启动过程 1.BIOS 上电自检（POST） 上电自检，由硬件的部分来完成，当电脑接通电源，电脑开始执行 BIOS的 POST过程，以确认硬件的基本功能是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://aicesun.github.io/post/linuxboot/" />
+<meta property="article:published_time" content="2019-09-18T13:10:49&#43;08:00"/>
+<meta property="article:modified_time" content="2019-09-18T13:10:49&#43;08:00"/>
+
+<meta itemprop="name" content="Linux 系统启动过程">
+<meta itemprop="description" content="Linux 系统启动过程 1.BIOS 上电自检（POST） 上电自检，由硬件的部分来完成，当电脑接通电源，电脑开始执行 BIOS的 POST过程，以确认硬件的基本功能是">
+
+
+<meta itemprop="datePublished" content="2019-09-18T13:10:49&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-18T13:10:49&#43;08:00" />
+<meta itemprop="wordCount" content="4386">
+
+
+
+<meta itemprop="keywords" content="LINUX," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux 系统启动过程"/>
+<meta name="twitter:description" content="Linux 系统启动过程 1.BIOS 上电自检（POST） 上电自检，由硬件的部分来完成，当电脑接通电源，电脑开始执行 BIOS的 POST过程，以确认硬件的基本功能是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">AICE&#39;s LAB</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">AICE&#39;s LAB</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux 系统启动过程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-18 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> LINUX </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#linux-系统启动过程">Linux 系统启动过程</a>
+<ul>
+<li><a href="#1-bios-上电自检-post">1.BIOS 上电自检（POST）</a></li>
+<li><a href="#2-引导装载程序-grub2">2.引导装载程序 (GRUB2)</a></li>
+<li><a href="#3-内核的引导">3.内核的引导</a></li>
+<li><a href="#4-运行systemd进程">4. 运行systemd进程</a></li>
+<li><a href="#5-系统初始化">5.系统初始化</a></li>
+<li><a href="#6-建立终端">6.建立终端</a></li>
+<li><a href="#7-用户登录系统">7.用户登录系统</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h3 id="linux-系统启动过程">Linux 系统启动过程</h3>
+
+<p><img src="/img/linuxboot.png" width="500" aligh=center /></p>
+
+<h4 id="1-bios-上电自检-post">1.BIOS 上电自检（POST）</h4>
+
+<p>上电自检，由硬件的部分来完成，当电脑接通电源，电脑开始执行 BIOS的 POST过程，以确认硬件的基本功能是否正常，然后产生一个 BIOS 中断 INT 13H，该中断指向某个接入的可引导设备的<strong>引导扇区</strong>。它所找到的包含有效的引导记录的第一个引导扇区将被装载到内存中，并且控制权也将从引导扇区转移到此段代码。</p>
+
+<p><strong>引导扇区</strong>是引导加载器真正的第一阶段。大多数 Linux 发行版本使用的引导加载器有三种：GRUB、GRUB2 和 LILO。GRUB2 是最新的，也是相对于其他老的同类程序使用最广泛的.</p>
+
+<h4 id="2-引导装载程序-grub2">2.引导装载程序 (GRUB2)</h4>
+
+<p>GRUB 的功能是<strong>在启动时从 BIOS 接管掌控、加载自身、加载 Linux 内核到内存，然后再把执行权交给内核</strong>。</p>
+
+<ul>
+<li>阶段 1</li>
+</ul>
+
+<p>在 POST 阶段结束时，BIOS 将查找在接入的磁盘中查找引导记录，其通常位于 MBR（主引导记录Master Boot Record），加载找到的第一个引导记录中到内存中，并开始执行此代码。引导代码（及阶段 1 代码）必须非常小，因为它必须连同分区表放到硬盘的第一个 512 字节的扇区中。 在传统的常规 MBR 中，引导代码实际所占用的空间大小为 446 字节。这个阶段 1 的 446 字节的文件通常被叫做引导镜像（boot.img），其中<strong>不包含设备的分区信息</strong>，分区是一般单独添加到引导记录中。由于引导记录必须非常的小，它不可能非常智能，且不能理解文件系统结构。因此<strong>阶段 1 的唯一功能就是定位并加载阶段 1.5 的代码</strong>。为了完成此任务，阶段 1.5 的代码必须位于引导记录与设备第一个分区之间的位置。在加载阶段 1.5 代码进入内存后，控制权将由阶段 1 转移到阶段 1.5。</p>
+
+<ul>
+<li>阶段 1.5</li>
+</ul>
+
+<p>该空间由于历史上的技术原因而空闲。第一个分区的开始位置在扇区 63 和  MBR（扇区 0）之间遗留下 62 个 512 字节的扇区（共 31744 字节），该区域用于存储阶段 1.5 的代码镜像 core.img  文件。该文件大小为 25389 字节，故此区域有足够大小的空间用来存储 core.img。</p>
+
+<p><strong>因为有更大的存储空间用于阶段 1.5，且该空间足够容纳一些通用的文件系统驱动程序</strong>，如标准的 EXT 和其它的 Linux 文件系统，如  FAT 和 NTFS 等。GRUB2 的 core.img 远比更老的 GRUB1 阶段 1.5 更复杂且更强大。这意味着 GRUB2 的阶段 2  能够放在标准的 EXT 文件系统内，但是不能放在逻辑卷内。故阶段 2 的文件可以存放于 <code>/boot</code> 文件系统中，一般在 <code>/boot/grub2</code> 目录下。</p>
+
+<p>注意 <code>/boot</code> 目录必须放在一个 GRUB 所支持的文件系统（并不是所有的文件系统均可）。<strong>阶段 1.5 的功能是开始执行存放阶段 2 文件的 <code>/boot</code> 文件系统的驱动程序，并加载相关的驱动程序</strong>。</p>
+
+<ul>
+<li>阶段 2</li>
+</ul>
+
+<p>GRUB 阶段 2 所有的文件都已存放于 <code>/boot/grub2</code> 目录及其几个子目录之下。该阶段没有一个类似于阶段 1 与阶段 1.5 的镜像文件。相应地，该阶段主要需要从 <code>/boot/grub2/i386-pc</code> 目录下加载一些内核运行时模块。</p>
+
+<p><strong>GRUB 阶段 2 的主要功能是定位和加载 Linux 内核到内存中，并转移控制权到内核</strong>。内核的相关文件位于 <code>/boot</code> 目录下，这些内核文件可以通过其文件名进行识别，其文件名均带有前缀 vmlinuz。可以列出 <code>/boot</code> 目录中的内容来查看操作系统中当前已经安装的内核。</p>
+
+<p>GRUB2 跟 GRUB1 类似，支持从 Linux 内核选择之一引导启动。Red Hat  包管理器（DNF）支持保留多个内核版本，以防最新版本内核发生问题而无法启动时，可以恢复老版本的内核。默认情况下，GRUB  提供了一个已安装内核的预引导菜单，其中包括问题诊断菜单（recuse）以及恢复菜单（如果配置已经设置恢复镜像）。</p>
+
+<p>阶段 2 加载选定的内核到内存中，并转移控制权到内核代码。</p>
+
+<p><strong>/etc/default/grub的相关配置</strong></p>
+
+<p>GRUB_TIMEOUT 这个键的值决定了显示 GRUB 选择菜单的时间长度。GRUB 提供了同时保存多个安装内核并在启动时使用 GRUB 菜单在其中选择的功能。这个键的默认值是 5 秒，但我通常修改为 10 秒使得有更多时间查看选项并作出选择。</p>
+
+<p>　　GRUB_DISTRIBUTOR  这个键定义了一个从 /etc/system-release 文件中提取发行版本的 sed 表达式。这个信息用于生成出现在 GRUB  菜单中的每个内核发布版的文本名称，例如 “CentOS Linux” 等。由于不同发行版之间 system-release  文件结构的差异，在你的系统中这个 sed 表达式可能有些不同。</p>
+
+<p>　　GRUB_DEFAULT 决定默认引导哪个内核。如果是  saved，这代表最新内核。这里的其它选项如果是数字则代表了 grub.cfg 中列表的索引。使用索引号  1，就会总是加载列表中的第二个内核，即使安装了一个新内核之后也是。因此使用索引数字的话，在安装一个新内核后会加载不同的内核。要确保引导特定内核版本的唯一方法是设置  GRUB_DEFAULT 的值为想要内核的名称，例如 4.18.9-1-MANJARO。</p>
+
+<p>　　GRUB_SAVEDEFAULT  通常，grub 默认文件中不会指定这个选项。当选择不同内核进行引导时，正常操作下该内核只会启动一次。默认内核不会改变。当其设置为 true 并和  GRUB_DEFAULT=saved 一起使用时，这个选项会保存一个不同内核作为默认值。当选择不同内核进行引导时会发生这种情况。</p>
+
+<p>　　GRUB_DISABLE_SUBMENU  一些人可能会希望为 GRUB 菜单创建一个内核的层级菜单结构。这个键和 grub.cfg  中一些额外内核配置允许创建这样的层级结构。例如，主菜单中可能有 production 和 test  子菜单，每个子菜单中包括了一些合适的内核。设置它为 false 可以启用子菜单。</p>
+
+<p>　　GRUB_TERMINAL_OUTPUT  一些环境下可能需要或者必要将输出重定向到一个不同的显示控制台或者终端。默认情况下是把输出发送到默认终端，通常 console 等价于 Intel  系列个人电脑的标准输出。另一个有用的选择是在使用串行终端或者 Integrated Lights Out (ILO)  终端连接的数据中心或者实验室环境中指定 serial。</p>
+
+<p>　　GRUB_TERMINAL_INPUT 和 GRUB_TERMINAL_OUTPUT 类似，可能需要或者必要重定向输入为串行终端或者 ILO 设备、而不是标准键盘输入。</p>
+
+<p>　　GRUB_CMDLINE_LINUX  这个键包括了在启动时会传递给内核的命令行参数。注意这些参数会被添加到 grub.cfg  所有已安装内核的内核行。这意味着所有已安装的内核在启动时都会有相同的参数。我通常删除 rhgb 和 quiet  参数以便我可以看到引导和启动时内核和 systemd 输出的所有内核信息消息。</p>
+
+<p>　　GRUB_DISABLE_RECOVERY 当这个键的值被设置为 false，GRUB 菜单中就会为每个已安装的内核创建一个恢复条目。当设置为 true 时就不会创建任何恢复条目。但不管这个设置怎样，最后的内核条目总是一个 rescue 选项</p>
+
+<h4 id="3-内核的引导">3.内核的引导</h4>
+
+<p>操作系统接管硬件以后，首先读入 /boot 目录下的内核文件。在选定的内核加载到内存中并开始执行后，在其进行任何工作之前，内核文件首先必须从压缩格式解压自身。一旦内核自解压完成，则加载 systemd 进程（其是老式 System V 系统的 init 程序的替代品)，并转移控制权到 systemd。这就是引导过程的结束。此刻，Linux 内核和 systemd 处于运行状态，但是由于没有其他任何程序在执行，故其不能执行任何有关用户的功能性任务。</p>
+
+<h4 id="4-运行systemd进程">4. 运行systemd进程</h4>
+
+<p>systemd即为system daemon，是linux下的一种init软件。</p>
+
+<ul>
+<li>并行处理所有服务，加速开机流程：旧的init启动脚本是“一项一项任务依序启动”的模式，因此不相依的服务也是得要一个一个的等待，而systemd可以让所有服务同时启动。</li>
+<li>一经要求就回应的on-demand启动方式：systemd全部就是仅有一只systemd服务搭配systemctl指令来处理，无须其他额外的指令来支持。不像systemV还要init,chkconfig,service…等等指令。此外，systemd由于常驻内存，因此任何要求（on-demand）都可以立即处理后续的daemon启动的任务。</li>
+<li>服务相依性的自我检查：因此如果B服务是架构在A服务上面启动的，那当你在没有启动A服务的情况下仅手动启动B服务时，systemd会自动帮你启动A服务。</li>
+</ul>
+
+<p>systemd 是所有进程的父进程。它负责将 Linux 主机带到一个用户可操作状态（可以执行功能任务）。systemd 的一些功能远较旧式 init 程序更丰富，可以管理运行中的 Linux 主机的许多方面，包括挂载文件系统，以及开启和管理 Linux 主机的系统服务等</p>
+
+<ol>
+<li>systemd 挂载在 <code>/etc/fstab</code> 中配置的文件系统，包括内存交换文件或分区。据此，systemd 必须能够访问位于 <code>/etc</code> 目录下的配置文件，包括它自己的。systemd 借助其配置文</li>
+<li><code>/etc/systemd/system/default.target</code> 决定 Linux 系统应该启动达到哪个状态（或目标态target）。<code>default.target</code> 是一个真实的 target 文件的符号链接。对于桌面系统，其链接到 <code>graphical.target</code>，该文件相当于旧式 systemV init 方式的 <strong>runlevel 5</strong>。对于一个服务器操作系统来说，<code>default.target</code> 更多是默认链接到 <code>multi-user.target</code>， 相当于 systemV 系统的 <strong>runlevel 3</strong>。 <code>emergency.target</code> 相当于单用户模式。</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th align="center">SystemV 运行级别</th>
+<th>systemd 目标态</th>
+<th>systemd 目标态别名</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"></td>
+<td><code>halt.target</code></td>
+<td></td>
+<td align="left">停止系统运行但不切断电源。</td>
+</tr>
+
+<tr>
+<td align="center">0</td>
+<td><code>poweroff.target</code></td>
+<td><code>runlevel0.target</code></td>
+<td align="left">停止系统运行并切断电源.</td>
+</tr>
+
+<tr>
+<td align="center">S</td>
+<td><code>emergency.target</code></td>
+<td></td>
+<td align="left">单用户模式，没有服务进程运行，文件系统也没挂载。这是一个最基本的运行级别，仅在主控制台上提供一个 shell 用于用户与系统进行交互。</td>
+</tr>
+
+<tr>
+<td align="center">1</td>
+<td><code>rescue.target</code></td>
+<td><code>runlevel1.target</code></td>
+<td align="left">挂载了文件系统，仅运行了最基本的服务进程的基本系统，并在主控制台启动了一个 shell 访问入口用于诊断。</td>
+</tr>
+
+<tr>
+<td align="center">2</td>
+<td></td>
+<td><code>runlevel2.target</code></td>
+<td align="left">多用户，没有挂载 NFS 文件系统，但是所有的非图形界面的服务进程已经运行。</td>
+</tr>
+
+<tr>
+<td align="center">3</td>
+<td><code>multi-user.target</code></td>
+<td><code>runlevel3.target</code></td>
+<td align="left">所有服务都已运行，但只支持命令行接口访问。</td>
+</tr>
+
+<tr>
+<td align="center">4</td>
+<td></td>
+<td><code>runlevel4.target</code></td>
+<td align="left">未使用。</td>
+</tr>
+
+<tr>
+<td align="center">5</td>
+<td><code>graphical.target</code></td>
+<td><code>runlevel5.target</code></td>
+<td align="left">多用户，且支持图形界面接口。</td>
+</tr>
+
+<tr>
+<td align="center">6</td>
+<td><code>reboot.target</code></td>
+<td><code>runlevel6.target</code></td>
+<td align="left">重启。</td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td><code>default.target</code></td>
+<td></td>
+<td align="left">这个目标态target是总是 <code>multi-user.target</code> 或 <code>graphical.target</code> 的一个符号链接的别名。systemd 总是通过 <code>default.target</code> 启动系统。<code>default.target</code> 绝不应该指向 <code>halt.target</code>、 <code>poweroff.target</code> 或 <code>reboot.target</code>。</td>
+</tr>
+</tbody>
+</table>
+
+<p>每个目标态target有一个在其配置文件中描述的依赖集，systemd 需要首先启动其所需依赖，这些依赖服务是 Linux 主机运行在特定的功能级别所要求的服务。当配置文件中所有的依赖服务都加载并运行后，即说明系统运行于该目标级别。</p>
+
+<p>systemd 也会查看老式的 systemV init 目录中是否存在相关启动文件，若存在，则 systemd 根据这些配置文件的内容启动对应的服务。在 Fedora 系统中，过时的网络服务就是通过该方式启动的一个实例。</p>
+
+<p><code>sysinit.target</code> 和 <code>basic.target</code> 目标态可以被视作启动过程中的状态检查点。尽管 systemd 的设计初衷是并行启动系统服务，但是部分服务或功能目标态是其它服务或目标态的启动的前提。系统将暂停于检查点直到其所要求的服务和目标态都满足为止。</p>
+
+<p><code>sysinit.target</code> 状态的到达是以其所依赖的所有资源模块都正常启动为前提的，所有其它的单元，如文件系统挂载、交换文件设置、设备管理器的启动、随机数生成器种子设置、低级别系统服务初始化、加解密服务启动（如果一个或者多个文件系统加密的话）等都必须完成，但是在 <strong>sysinit.target</strong> 中这些服务与模块是可以并行启动的。</p>
+
+<p><code>sysinit.target</code> 启动所有的低级别服务和系统初具功能所需的单元，这些都是进入下一阶段 basic.target 的必要前提。</p>
+
+<p><img src="/home/aice/shell_study/qidong.jpg" alt="qidong" /></p>
+
+<p>在 <code>sysinit.target</code> 的条件满足以后，systemd 接下来启动 <code>basic.target</code>，启动其所要求的所有单元。 <code>basic.target</code> 通过启动下一目标态所需的单元而提供了更多的功能，这包括各种可执行文件的目录路径、通信 sockets，以及定时器等。</p>
+
+<p>最后，用户级目标态（<code>multi-user.target</code> 或 <code>graphical.target</code>） 可以初始化了，应该注意的是 <code>multi-user.target</code> 必须在满足图形化目标态 <code>graphical.target</code> 的依赖项之前先达成。</p>
+
+<p>图 1 中，以 <code>*</code> 开头的目标态是通用的启动状态。当到达其中的某一目标态，则说明系统已经启动完成了。如果 <code>multi-user.target</code> 是默认的目标态，则成功启动的系统将以命令行登录界面呈现于用户。如果 <code>graphical.target</code> 是默认的目标态，则成功启动的系统将以图形登录界面呈现于用户，界面的具体样式将根据系统所配置的<a href="https://opensource.com/article/16/12/yearbook-best-couple-2016-display-manager-and-window-manager">显示管理器</a>而定。</p>
+
+<h4 id="5-系统初始化">5.系统初始化</h4>
+
+<h4 id="6-建立终端">6.建立终端</h4>
+
+<h4 id="7-用户登录系统">7.用户登录系统</h4>
+
+<p><strong>REFERENCE</strong></p>
+
+<p><a href="https://blog.csdn.net/mayfly_hml/article/details/88891960">https://blog.csdn.net/mayfly_hml/article/details/88891960</a></p>
+
+<p><a href="https://linux.cn/article-8807-1.html">https://linux.cn/article-8807-1.html</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">aice</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-09-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">LINUX</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/sort/">
+            <span class="next-text nav-default">排序算法</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+  <a href="http://aicesun.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">aice</span>
+  </span>
+</div>
+
+ 
+ <script src="https://mermaidjs.github.io/scripts/mermaid.min.js"></script>
+ <script>
+        mermaid.initialize({ startOnLoad: true });
+ </script>
+
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+      TeX: {equationNumbers: {autoNumber: "AMS"}},
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
